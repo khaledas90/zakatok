@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "login": {
+      "Welcome Back": "Welcome Back",
+      "sign in to your account": "Sign in to your account",
+      "Email": "Email",
+      "Enter your email": "Enter your email",
+      "Password": "Password",
+      "Enter your password": "Enter your password",
+      "Remember Me": "Remember Me",
+      "Forgot Password?": "Forgot Password?",
+      "Login": "Login",
+      "Login successful!": "Login successful!"
+    }
+  }
+}

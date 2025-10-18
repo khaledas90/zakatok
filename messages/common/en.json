@@ -1,0 +1,94 @@
+{
+  "common": {
+    "navigation": {
+      "Home": "Home",
+      "Countries": "Countries",
+      "Campaigns": "Campaigns"
+    },
+    "header": {
+      "Home": "Home",
+      "Countries": "Countries",
+      "Campaigns": "Campaigns",
+      "Contact Us": "Contact Us",
+      "Search": "Search...",
+      "Search Results for": "Search Results for",
+      "Searching products": "Searching products...",
+      "No results found": "No results found",
+      "Try searching for something else": "Try searching for something else",
+      "Clear Search": "Clear Search"
+    },
+    "footer": {
+      "About Us": "About Us",
+      "Contact Us": "Contact Us",
+      "Our Policy": "Our Policy"
+    },
+    "hero": {
+      "slide1": {
+        "title": "Who is it that would loan Allah a goodly loan so He may multiply it for him many times over? And it is Allah who withholds and grants abundance, and to Him you will be returned.",
+        "subtitle": "[Surah Al-Baqarah 245]",
+        "cta": "Donate Now"
+      },
+      "slide2": {
+        "title": "Your Zakat Makes a Difference in Thousands of Lives",
+        "subtitle": "Help build a better future for those in need",
+        "cta": "Start Donating"
+      },
+      "slide3": {
+        "title": "Be the Reason Someone Gets Fed",
+        "subtitle": "Every donation reaches those who deserve it with honesty and transparency",
+        "cta": "Join Us"
+      },
+      "slide4": {
+        "title": "Healthcare is a Right for Everyone",
+        "subtitle": "Help provide treatment and medicine for needy patients",
+        "cta": "Donate for Health"
+      }
+    },
+    "countries": {
+      "donateNow": "Donate Now",
+      "title": "Which country would you like to donate Zakat to?",
+      "subtitle": "Choose a country to start donating and help those in need",
+      "notSeeCountry": "Don't see your country?",
+      "suggestNewCountry": "Suggest a new country",
+      "countryNames": {
+        "egypt": "Egypt",
+        "saudiArabia": "Saudi Arabia",
+        "uae": "UAE",
+        "jordan": "Jordan",
+        "qatar": "Qatar"
+      }
+    },
+    "gazaEmergency": {
+      "title": "Emergency Appeal for Gaza",
+      "description": "Gaza needs your urgent help. Contribute to relief efforts for affected families and provide food, medicine, and shelter for needy families during these difficult times.",
+      "donateNow": "Donate Now"
+    },
+    "globalImpact": {
+      "title": "Our Global Reach",
+      "subtitle": "We reach those in need everywhere, bringing hope and building the future",
+      "beneficiaries": "Beneficiaries",
+      "projects": "Charity Projects",
+      "countries": "Countries",
+      "beneficiariesLabel": "Beneficiaries",
+      "projectsLabel": "Projects",
+      "regions": {
+        "northAfrica": {
+          "name": "North Africa",
+          "countries": "Egypt • Libya • Tunisia • Algeria • Morocco"
+        },
+        "gulf": {
+          "name": "Gulf Region",
+          "countries": "Saudi Arabia • UAE • Qatar • Kuwait • Bahrain • Oman"
+        },
+        "levant": {
+          "name": "Levant",
+          "countries": "Jordan • Palestine • Lebanon • Syria"
+        },
+        "peninsula": {
+          "name": "Arabian Peninsula",
+          "countries": "Yemen"
+        }
+      }
+    }
+  }
+}

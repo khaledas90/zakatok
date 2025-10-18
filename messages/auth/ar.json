@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "login": {
+      "Welcome Back": "مرحبًا بعودتك",
+      "sign in to your account": "قم بتسجيل الدخول إلى حسابك",
+      "Email": "البريد الإلكتروني",
+      "Enter your email": "أدخل بريدك الإلكتروني",
+      "Password": "كلمة المرور",
+      "Enter your password": "أدخل كلمة المرور",
+      "Remember Me": "تذكرني",
+      "Forgot Password?": "هل نسيت كلمة المرور؟",
+      "Login": "تسجيل الدخول",
+      "Login successful!": "تم تسجيل الدخول بنجاح!"
+    }
+  }
+}
