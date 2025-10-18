@@ -17,6 +17,7 @@ export function CountryCard({ name, flagElement }: CountryCardProps) {
       style={{
         backgroundImage: `url(${flagElement.src})`,
         backgroundSize: "cover",
+        objectFit: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
