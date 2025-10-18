@@ -59,7 +59,7 @@ export default async function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <LanguageSwitcher />
             <Button variant="default" className="text-white !bg-[#2c7242]">
-              أضف منطقة
+              {t("Add Region")}
             </Button>
           </div>
 

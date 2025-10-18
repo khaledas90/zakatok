@@ -115,26 +115,22 @@ export function GlobalImpact() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-primary"></div>
-            <div className="p-3 bg-main/10 rounded-full">
+        <div className="text-center mb-12">
+          <div className="inline-block">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-[#c48845]"></div>
               <Globe className="w-8 h-8 text-main" />
-            </div>
-            <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-primary"></div>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-arabic">
-            {t("title")}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-arabic">
-            {t("subtitle")}
-          </p>
-        </div>
 
+              <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-[#c48845]"></div>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#202121] mb-2 font-arabic">
+              {t("title")}
+            </h2>
+            <p className="text-[#6b7280] text-lg font-arabic">
+              {t("subtitle")}
+            </p>
+          </div>
+        </div>
         <div
           className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-18 mx-auto transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
