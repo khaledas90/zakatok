@@ -65,8 +65,8 @@ export function GlobalImpact() {
       countries: t("regions.northAfrica.countries"),
       beneficiaries: 125000,
       projects: 450,
-      color: "from-red-500 to-red-600",
-      gradient: "from-red-500/20 to-red-600/20",
+      color: "from-primary to-primary/80",
+      gradient: "from-primary/20 to-primary/10",
       icon: <MapPin className="w-8 h-8" />,
     },
     {
@@ -92,8 +92,8 @@ export function GlobalImpact() {
       countries: t("regions.peninsula.countries"),
       beneficiaries: 98000,
       projects: 410,
-      color: "from-blue-500 to-blue-600",
-      gradient: "from-blue-500/20 to-blue-600/20",
+      color: "from-[#2c7242] to-[#2c7242]/80",
+      gradient: "from-[#2c7242]/20 to-[#2c7242]/10",
       icon: <Globe className="w-8 h-8" />,
     },
   ];
