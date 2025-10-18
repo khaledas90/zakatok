@@ -87,7 +87,7 @@ export function Hero() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 font-arabic">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 max-w-5xl leading-relaxed animate-fade-in">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 lg:w-7xl w-full leading-relaxed animate-fade-in">
               {slide.title}
             </h1>
             <p className="text-base md:text-lg opacity-90 mb-6 animate-fade-in-delay">
