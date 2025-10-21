@@ -327,7 +327,6 @@ export function OrganizationForm({
                     : "border-[#d9d9d9] focus:border-[#2c7242] focus:ring-[#2c7242]"
                 }`}
               />
-              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#858d9d] pointer-events-none" />
             </div>
             {errors.creationDate && (
               <p className="text-[#e52836] text-xs mt-1">
