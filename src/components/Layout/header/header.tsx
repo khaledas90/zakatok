@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileNavigationClient from "./MobileNavigation";
@@ -27,26 +27,26 @@ export default async function Header() {
 
           <nav className="hidden lg:flex items-center space-x-4 gap-3">
             <Link
-              href={`/${locale}/`}
+              href={`/`}
               className="text-gray-700 hover:text-[#3ABFF8] transition-colors duration-200 font-medium"
             >
               {t("Home")}
             </Link>
             <Link
-              href={`/${locale}/countries`}
+              href={`/countries`}
               className="text-gray-700 hover:text-[#3ABFF8] transition-colors duration-200 font-medium"
             >
               {t("Countries")}
             </Link>
             <Link
-              href={`/${locale}/campaigns`}
+              href={`/campaigns`}
               className="text-gray-700 hover:text-[#3ABFF8] transition-colors duration-200 font-medium"
             >
               {t("Campaigns")}
             </Link>
 
             <Link
-              href={`/${locale}/contact-us`}
+              href={`/contact-us`}
               className="text-gray-700 hover:text-[#3ABFF8] transition-colors duration-200 font-medium"
             >
               {t("Contact Us")}
@@ -58,9 +58,11 @@ export default async function Header() {
 
           <div className="hidden lg:flex items-center space-x-4">
             <LanguageSwitcher />
-            <Button variant="default" className="text-white !bg-[#2c7242]">
-              {t("Add Region")}
-            </Button>
+            <Link href={`/add-organization`}>
+              <Button variant="default" className="text-white !bg-[#2c7242]">
+                {t("Add Organization")}
+              </Button>
+            </Link>
           </div>
 
           <div className="flex lg:hidden items-center space-x-2">

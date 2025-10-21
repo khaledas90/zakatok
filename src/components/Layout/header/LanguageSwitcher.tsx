@@ -114,9 +114,14 @@ const LanguageSwitcher = ({ isFooter }: { isFooter?: boolean }) => {
                 ? "bg-gray-100 text-black"
                 : "hover:bg-gray-50 text-[ hover:text-gray-900"
             }`}
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               setIsOpen(false);
-              router.push(`/${lang.code}`);
+
+              const pathWithoutLang = pathname.replace(/^\/(ar|en)/, "");
+              const newPath = `/${lang.code}${pathWithoutLang || "/"}`;
+
+              router.push(newPath);
               invalidateAllQueries();
             }}
             style={{ animationDelay: `${index * 50}ms` }}

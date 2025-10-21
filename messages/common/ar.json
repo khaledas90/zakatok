@@ -15,7 +15,7 @@
       "No results found": "لم يتم العثور على نتايج",
       "Try searching for something else": "حاول البحث عن شيء اخر",
       "Clear Search": "مسح البحث",
-      "Add Region": "أضف منطقة"
+      "Add Organization": "أضف منظمة"
     },
     "footer": {
       "About Us": "معلومات عنا",
@@ -88,6 +88,302 @@
           "name": "شبه الجزيرة",
           "countries": "اليمن"
         }
+      }
+    },
+    "organizationForm": {
+      "pageTitle": "إضافة منظمة جديدة",
+      "pageSubtitle": "سجل منظمتك لتتمكن من استقبال التبرعات",
+      "supportOrganizations": "دعم المنظمات",
+      "secureGuaranteed": "آمن ومضمون",
+      "submitForm": "إرسال النموذج",
+      "formSubmittedSuccessfully": "تم إرسال النموذج بنجاح!",
+      "formSubmissionError": "حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى.",
+      "step1": {
+        "title": "المعلومات الأساسية",
+        "description": "أدخل المعلومات الأساسية للمنظمة",
+        "officialName": "الاسم الرسمي للمنظمة",
+        "licenseNumber": "رقم الترخيص",
+        "address": "العنوان",
+        "country": "الدولة",
+        "city": "المدينة",
+        "mobileNumber": "رقم الموبايل",
+        "altMobileNumber": "رقم موبايل بديل",
+        "creationDate": "تاريخ الإنشاء"
+      },
+      "step2": {
+        "title": "معلومات إضافية",
+        "description": "أدخل تفاصيل إضافية عن المنظمة",
+        "organizationType": "نوع المنظمة",
+        "numberOfBeneficiaries": "عدد المستفيدين المتوقع",
+        "projectDescription": "وصف المشروع أو النشاط",
+        "projectDescriptionPlaceholder": "اكتب وصفاً تفصيلياً عن المشروع أو النشاط الذي تقوم به المنظمة",
+        "websiteUrl": "الموقع الإلكتروني (اختياري)"
+      },
+      "step3": {
+        "title": "الحسابات البنكية",
+        "description": "أضف حساباتك البنكية لاستقبال التبرعات",
+        "bankAccounts": "الحسابات البنكية",
+        "addBankAccount": "إضافة حساب بنكي",
+        "bankAccount": "حساب بنكي",
+        "delete": "حذف",
+        "bankName": "اسم البنك",
+        "bankNamePlaceholder": "اسم البنك",
+        "accountNumber": "رقم الحساب",
+        "accountNumberPlaceholder": "رقم الحساب",
+        "iban": "رقم IBAN (اختياري)",
+        "ibanPlaceholder": "SA00 0000 0000 0000 0000 0000"
+      },
+      "step4": {
+        "title": "الدفع النقدي",
+        "description": "أضف مواقع استقبال الدفع النقدي",
+        "cashPaymentLocations": "مواقع استقبال الدفع النقدي",
+        "addCashLocation": "إضافة موقع نقدي",
+        "noCashLocations": "لم يتم إضافة مواقع نقدية بعد",
+        "canAddCashLocations": "يمكنك إضافة مواقع لاستقبال الدفع النقدي",
+        "cashLocation": "موقع نقدي",
+        "address": "العنوان",
+        "addressPlaceholder": "العنوان الكامل",
+        "city": "المدينة",
+        "cityPlaceholder": "المدينة",
+        "mobileNumber": "رقم الموبايل",
+        "mobileNumberPlaceholder": "رقم الموبايل",
+        "altMobileNumber": "رقم موبايل بديل",
+        "altMobileNumberPlaceholder": "رقم موبايل بديل",
+        "mapUrl": "رابط الخريطة",
+        "mapUrlPlaceholder": "https://maps.google.com/..."
+      },
+      "step5": {
+        "title": "نوع التبرع والشروط",
+        "description": "اختر نوع التبرع واقرأ الشروط",
+        "donationType": "نوع التبرع",
+        "targetAmount": "المبلغ المستهدف",
+        "projectDuration": "مدة المشروع (بالأشهر)",
+        "agreeToTerms": "أوافق على",
+        "termsAndConditions": "الشروط والأحكام",
+        "privacyPolicy": "سياسة الخصوصية"
+      },
+      "navigation": {
+        "previous": "السابق",
+        "next": "التالي",
+        "sending": "جاري الإرسال...",
+        "step": "الخطوة",
+        "of": "من"
+      },
+      "constants": {
+        "countries": {
+          "egypt": "مصر",
+          "saudi": "السعودية",
+          "uae": "الإمارات",
+          "jordan": "الأردن",
+          "qatar": "قطر"
+        },
+        "countryCodes": {
+          "egypt": "مصر (+20)",
+          "saudi": "السعودية (+966)",
+          "uae": "الإمارات (+971)",
+          "jordan": "الأردن (+962)",
+          "qatar": "قطر (+974)"
+        },
+        "donationTypes": {
+          "zakat": "زكاة",
+          "sadaqah": "صدقة",
+          "orphanSponsorship": "كفالة يتيم",
+          "emergencyAid": "مساعدات طارئة"
+        },
+        "formSteps": {
+          "step1": {
+            "title": "المعلومات الاساسية",
+            "description": "المعلومات المطلوبة للتسجيل"
+          },
+          "step2": {
+            "title": "المزيد من المعلومات",
+            "description": "سوف تجذب الزوار وتسهل فهمهم لمهمتك"
+          },
+          "step3": {
+            "title": "طرق الدفع - البنك",
+            "description": "أضف معلومات الحسابات البنكية"
+          },
+          "step4": {
+            "title": "طرق الدفع - الكاش",
+            "description": "أضف مواقع استقبال الدفع النقدي"
+          },
+          "step5": {
+            "title": "تبرعات مدعومة، المدن المغطاه",
+            "description": "حدد كل ما ينطبق، نوع واحد على الأقل"
+          }
+        }
+      },
+      "validation": {
+        "bankNameRequired": "اسم البنك مطلوب",
+        "accountNumberRequired": "رقم الحساب مطلوب",
+        "addressRequired": "العنوان مطلوب",
+        "cityRequired": "المدينة مطلوبة",
+        "mobileNumberRequired": "رقم الموبايل مطلوب",
+        "officialNameRequired": "الاسم الرسمي مطلوب",
+        "licenseNumberRequired": "رقم الترخيص مطلوب",
+        "countryRequired": "الدولة مطلوبة",
+        "countryCodeRequired": "رمز الدولة مطلوب",
+        "creationDateRequired": "تاريخ الإنشاء مطلوب",
+        "organizationTypeRequired": "نوع المنظمة مطلوب",
+        "numberOfBeneficiariesRequired": "عدد المستفيدين مطلوب",
+        "projectDescriptionRequired": "وصف المشروع مطلوب",
+        "invalidWebsiteUrl": "الموقع الإلكتروني غير صحيح",
+        "atLeastOneBankAccount": "يجب إضافة حساب بنكي واحد على الأقل",
+        "donationTypeRequired": "نوع التبرع مطلوب",
+        "targetAmountRequired": "المبلغ المستهدف مطلوب",
+        "mustAgreeToTerms": "يجب الموافقة على الشروط والأحكام"
+      }
+    },
+    "contactUs": {
+      "pageTitle": "تواصل معنا",
+      "pageSubtitle": "نحن هنا لمساعدتك في أي وقت",
+      "customerSupport": "دعم العملاء",
+      "quickResponse": "استجابة سريعة",
+      "messageSentSuccessfully": "تم إرسال رسالتك بنجاح!",
+      "weWillContactYouSoon": "سنتواصل معك في أقرب وقت ممكن",
+      "contactInformation": "معلومات التواصل",
+      "email": "البريد الإلكتروني",
+      "emailValue": "info@zakatok.com",
+      "emailDescription": "راسلنا على أي وقت",
+      "phone": "رقم الهاتف",
+      "phoneValue": "+966 50 123 4567",
+      "phoneDescription": "متاح من 9 صباحاً إلى 6 مساءً",
+      "address": "العنوان",
+      "addressValue": "الرياض، المملكة العربية السعودية",
+      "addressDescription": "شارع الملك فهد، مبنى الزكاة",
+      "workingHours": "ساعات العمل",
+      "workingHoursValue": "الأحد - الخميس",
+      "workingHoursDescription": "9:00 ص - 6:00 م",
+      "faq": "أسئلة شائعة",
+      "howToRegisterOrganization": "كيف يمكنني التسجيل كمنظمة؟",
+      "howToRegisterOrganizationAnswer": "يمكنك التسجيل من خلال صفحة \"إضافة منظمة\" وتعبئة البيانات المطلوبة",
+      "donationTypesAvailable": "ما هي أنواع التبرعات المتاحة؟",
+      "donationTypesAvailableAnswer": "نحن ندعم الزكاة، الصدقة، كفالة الأيتام، والمساعدات الطارئة",
+      "areDonationsSecure": "هل التبرعات آمنة؟",
+      "areDonationsSecureAnswer": "نعم، جميع التبرعات محمية بأعلى معايير الأمان والشفافية",
+      "sendMessage": "أرسل لنا رسالة",
+      "fullName": "الاسم الكامل",
+      "fullNamePlaceholder": "ادخل اسمك الكامل",
+      "emailField": "البريد الإلكتروني",
+      "emailFieldPlaceholder": "example@email.com",
+      "phoneField": "رقم الهاتف",
+      "phoneFieldPlaceholder": "+966 50 123 4567",
+      "subject": "الموضوع",
+      "subjectPlaceholder": "موضوع الرسالة",
+      "message": "الرسالة",
+      "messagePlaceholder": "اكتب رسالتك هنا...",
+      "sendMessageButton": "إرسال الرسالة",
+      "validation": {
+        "nameRequired": "الاسم مطلوب",
+        "emailInvalid": "البريد الإلكتروني غير صحيح",
+        "phoneRequired": "رقم الهاتف مطلوب",
+        "subjectRequired": "الموضوع مطلوب",
+        "messageMinLength": "الرسالة يجب أن تكون 10 أحرف على الأقل"
+      }
+    },
+    "termsAndPrivacy": {
+      "pageTitle": "سياسة الاستخدام وشروط الاستخدام",
+      "pageSubtitle": "اقرأ شروط استخدام منصة زكاتك وسياسة الخصوصية",
+      "lastUpdated": "آخر تحديث",
+      "effectiveDate": "تاريخ السريان",
+      "termsOfService": {
+        "title": "شروط الاستخدام",
+        "subtitle": "يرجى قراءة هذه الشروط بعناية قبل استخدام منصة زكاتك",
+        "sections": {
+          "acceptance": {
+            "title": "1. قبول الشروط",
+            "content": "باستخدامك لمنصة زكاتك، فإنك توافق على الالتزام بهذه الشروط والأحكام. إذا كنت لا توافق على أي جزء من هذه الشروط، فيرجى عدم استخدام منصتنا."
+          },
+          "description": {
+            "title": "2. وصف الخدمة",
+            "content": "زكاتك هي منصة إلكترونية تهدف إلى تسهيل عملية التبرع بالزكاة والصدقة للمنظمات الخيرية المعتمدة. نحن نقدم خدمات ربط المانحين بالمنظمات المؤهلة لاستقبال التبرعات."
+          },
+          "userResponsibilities": {
+            "title": "3. مسؤوليات المستخدم",
+            "content": "يجب على المستخدمين تقديم معلومات دقيقة وصحيحة، والالتزام بالقوانين المحلية والدولية، وعدم استخدام المنصة لأي أغراض غير قانونية أو ضارة."
+          },
+          "prohibitedUses": {
+            "title": "4. الاستخدامات المحظورة",
+            "content": "يحظر استخدام المنصة لأي نشاط غير قانوني، أو إرسال محتوى ضار، أو محاولة اختراق النظام، أو أي نشاط قد يضر بسمعة المنصة أو المستخدمين الآخرين."
+          },
+          "intellectualProperty": {
+            "title": "5. الملكية الفكرية",
+            "content": "جميع المحتويات والتصاميم والبرمجيات في منصة زكاتك محمية بحقوق الطبع والنشر. لا يجوز نسخ أو توزيع أو تعديل أي جزء من المحتوى دون إذن كتابي."
+          },
+          "limitationOfLiability": {
+            "title": "6. تحديد المسؤولية",
+            "content": "لا تتحمل زكاتك مسؤولية عن أي أضرار مباشرة أو غير مباشرة قد تنتج عن استخدام المنصة. نحن نقدم الخدمة كما هي دون ضمانات."
+          },
+          "modifications": {
+            "title": "7. التعديلات",
+            "content": "نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سيتم إشعار المستخدمين بأي تغييرات جوهرية عبر المنصة أو البريد الإلكتروني."
+          },
+          "termination": {
+            "title": "8. إنهاء الخدمة",
+            "content": "يمكن لنا إنهاء أو تعليق حسابك في أي وقت إذا انتهكت هذه الشروط أو إذا كان هناك أي نشاط مشبوه أو ضار."
+          },
+          "governingLaw": {
+            "title": "9. القانون الحاكم",
+            "content": "تخضع هذه الشروط لقوانين المملكة العربية السعودية. أي نزاعات ستُحل في المحاكم المختصة في المملكة."
+          },
+          "contact": {
+            "title": "10. التواصل معنا",
+            "content": "إذا كان لديك أي أسئلة حول هذه الشروط، يرجى التواصل معنا عبر البريد الإلكتروني: legal@zakatok.com"
+          }
+        }
+      },
+      "privacyPolicy": {
+        "title": "سياسة الخصوصية",
+        "subtitle": "نحن ملتزمون بحماية خصوصيتك وبياناتك الشخصية",
+        "sections": {
+          "informationCollection": {
+            "title": "1. جمع المعلومات",
+            "content": "نجمع المعلومات التي تقدمها لنا مباشرة عند التسجيل أو استخدام خدماتنا، بما في ذلك الاسم والبريد الإلكتروني ورقم الهاتف ومعلومات الدفع."
+          },
+          "informationUsage": {
+            "title": "2. استخدام المعلومات",
+            "content": "نستخدم معلوماتك لتقديم خدماتنا، ومعالجة التبرعات، والتواصل معك، وتحسين تجربة المستخدم، والامتثال للقوانين المعمول بها."
+          },
+          "informationSharing": {
+            "title": "3. مشاركة المعلومات",
+            "content": "لا نبيع أو نؤجر معلوماتك الشخصية لأطراف ثالثة. قد نشارك معلوماتك مع المنظمات الخيرية المعتمدة فقط لغرض إتمام التبرعات."
+          },
+          "dataSecurity": {
+            "title": "4. أمان البيانات",
+            "content": "نستخدم تقنيات التشفير المتقدمة لحماية بياناتك. جميع المعاملات المالية تتم عبر قنوات آمنة ومشفرة."
+          },
+          "cookies": {
+            "title": "5. ملفات تعريف الارتباط",
+            "content": "نستخدم ملفات تعريف الارتباط لتحسين تجربة المستخدم وتذكر تفضيلاتك. يمكنك تعطيل ملفات تعريف الارتباط في إعدادات المتصفح."
+          },
+          "userRights": {
+            "title": "6. حقوق المستخدم",
+            "content": "لديك الحق في الوصول إلى بياناتك وتعديلها أو حذفها. يمكنك طلب نسخة من بياناتك أو إلغاء اشتراكك في أي وقت."
+          },
+          "dataRetention": {
+            "title": "7. الاحتفاظ بالبيانات",
+            "content": "نحتفظ ببياناتك طالما كان حسابك نشطاً أو حسب المتطلبات القانونية. سنحذف بياناتك عند إلغاء الحساب أو انتهاء الفترة القانونية."
+          },
+          "childrenPrivacy": {
+            "title": "8. خصوصية الأطفال",
+            "content": "خدماتنا غير مخصصة للأطفال دون سن 13 عاماً. لا نجمع معلومات شخصية من الأطفال دون موافقة الوالدين."
+          },
+          "internationalTransfers": {
+            "title": "9. النقل الدولي للبيانات",
+            "content": "قد يتم نقل بياناتك إلى دول أخرى لمعالجة الخدمات. نضمن أن جميع النقل يتم وفقاً لمعايير الحماية المناسبة."
+          },
+          "policyUpdates": {
+            "title": "10. تحديث السياسة",
+            "content": "قد نحدث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإشعارك بأي تغييرات جوهرية عبر البريد الإلكتروني أو المنصة."
+          }
+        }
+      },
+      "navigation": {
+        "termsOfService": "شروط الاستخدام",
+        "privacyPolicy": "سياسة الخصوصية",
+        "backToHome": "العودة للرئيسية",
+        "print": "طباعة",
+        "download": "تحميل PDF"
       }
     }
   }

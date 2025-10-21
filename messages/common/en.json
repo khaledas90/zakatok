@@ -16,7 +16,7 @@
       "No results found": "No results found",
       "Try searching for something else": "Try searching for something else",
       "Clear Search": "Clear Search",
-      "Add Region": "Add Region"
+      "Add Organization": "Add Organization"
     },
     "footer": {
       "About Us": "About Us",
@@ -89,6 +89,302 @@
           "name": "Arabian Peninsula",
           "countries": "Yemen"
         }
+      }
+    },
+    "organizationForm": {
+      "pageTitle": "Add New Organization",
+      "pageSubtitle": "Register your organization to receive donations",
+      "supportOrganizations": "Support Organizations",
+      "secureGuaranteed": "Secure & Guaranteed",
+      "submitForm": "Submit Form",
+      "formSubmittedSuccessfully": "Form submitted successfully!",
+      "formSubmissionError": "An error occurred while submitting the form. Please try again.",
+      "step1": {
+        "title": "Basic Information",
+        "description": "Enter the basic information of the organization",
+        "officialName": "Official Organization Name",
+        "licenseNumber": "License Number",
+        "address": "Address",
+        "country": "Country",
+        "city": "City",
+        "mobileNumber": "Mobile Number",
+        "altMobileNumber": "Alternative Mobile Number",
+        "creationDate": "Creation Date"
+      },
+      "step2": {
+        "title": "Additional Information",
+        "description": "Enter additional details about the organization",
+        "organizationType": "Organization Type",
+        "numberOfBeneficiaries": "Expected Number of Beneficiaries",
+        "projectDescription": "Project or Activity Description",
+        "projectDescriptionPlaceholder": "Write a detailed description about the project or activity that your organization carries out",
+        "websiteUrl": "Website (Optional)"
+      },
+      "step3": {
+        "title": "Bank Accounts",
+        "description": "Add your bank accounts to receive donations",
+        "bankAccounts": "Bank Accounts",
+        "addBankAccount": "Add Bank Account",
+        "bankAccount": "Bank Account",
+        "delete": "Delete",
+        "bankName": "Bank Name",
+        "bankNamePlaceholder": "Bank Name",
+        "accountNumber": "Account Number",
+        "accountNumberPlaceholder": "Account Number",
+        "iban": "IBAN Number (Optional)",
+        "ibanPlaceholder": "SA00 0000 0000 0000 0000 0000"
+      },
+      "step4": {
+        "title": "Cash Payment",
+        "description": "Add cash payment collection locations",
+        "cashPaymentLocations": "Cash Payment Collection Locations",
+        "addCashLocation": "Add Cash Location",
+        "noCashLocations": "No cash locations added yet",
+        "canAddCashLocations": "You can add locations to receive cash payments",
+        "cashLocation": "Cash Location",
+        "address": "Address",
+        "addressPlaceholder": "Full Address",
+        "city": "City",
+        "cityPlaceholder": "City",
+        "mobileNumber": "Mobile Number",
+        "mobileNumberPlaceholder": "Mobile Number",
+        "altMobileNumber": "Alternative Mobile Number",
+        "altMobileNumberPlaceholder": "Alternative Mobile Number",
+        "mapUrl": "Map Link",
+        "mapUrlPlaceholder": "https://maps.google.com/..."
+      },
+      "step5": {
+        "title": "Donation Type & Terms",
+        "description": "Choose donation type and read terms",
+        "donationType": "Donation Type",
+        "targetAmount": "Target Amount",
+        "projectDuration": "Project Duration (in months)",
+        "agreeToTerms": "I agree to",
+        "termsAndConditions": "Terms and Conditions",
+        "privacyPolicy": "Privacy Policy"
+      },
+      "navigation": {
+        "previous": "Previous",
+        "next": "Next",
+        "sending": "Sending...",
+        "step": "Step",
+        "of": "of"
+      },
+      "constants": {
+        "countries": {
+          "egypt": "Egypt",
+          "saudi": "Saudi Arabia",
+          "uae": "UAE",
+          "jordan": "Jordan",
+          "qatar": "Qatar"
+        },
+        "countryCodes": {
+          "egypt": "Egypt (+20)",
+          "saudi": "Saudi Arabia (+966)",
+          "uae": "UAE (+971)",
+          "jordan": "Jordan (+962)",
+          "qatar": "Qatar (+974)"
+        },
+        "donationTypes": {
+          "zakat": "Zakat",
+          "sadaqah": "Sadaqah",
+          "orphanSponsorship": "Orphan Sponsorship",
+          "emergencyAid": "Emergency Aid"
+        },
+        "formSteps": {
+          "step1": {
+            "title": "Basic Information",
+            "description": "Required information for registration"
+          },
+          "step2": {
+            "title": "Additional Information",
+            "description": "Will attract visitors and help them understand your mission"
+          },
+          "step3": {
+            "title": "Payment Methods - Bank",
+            "description": "Add bank account information"
+          },
+          "step4": {
+            "title": "Payment Methods - Cash",
+            "description": "Add cash payment collection locations"
+          },
+          "step5": {
+            "title": "Supported Donations, Covered Cities",
+            "description": "Specify all that apply, at least one type"
+          }
+        }
+      },
+      "validation": {
+        "bankNameRequired": "Bank name is required",
+        "accountNumberRequired": "Account number is required",
+        "addressRequired": "Address is required",
+        "cityRequired": "City is required",
+        "mobileNumberRequired": "Mobile number is required",
+        "officialNameRequired": "Official name is required",
+        "licenseNumberRequired": "License number is required",
+        "countryRequired": "Country is required",
+        "countryCodeRequired": "Country code is required",
+        "creationDateRequired": "Creation date is required",
+        "organizationTypeRequired": "Organization type is required",
+        "numberOfBeneficiariesRequired": "Number of beneficiaries is required",
+        "projectDescriptionRequired": "Project description is required",
+        "invalidWebsiteUrl": "Invalid website URL",
+        "atLeastOneBankAccount": "At least one bank account must be added",
+        "donationTypeRequired": "Donation type is required",
+        "targetAmountRequired": "Target amount is required",
+        "mustAgreeToTerms": "Must agree to terms and conditions"
+      }
+    },
+    "contactUs": {
+      "pageTitle": "Contact Us",
+      "pageSubtitle": "We are here to help you anytime",
+      "customerSupport": "Customer Support",
+      "quickResponse": "Quick Response",
+      "messageSentSuccessfully": "Your message has been sent successfully!",
+      "weWillContactYouSoon": "We will contact you as soon as possible",
+      "contactInformation": "Contact Information",
+      "email": "Email",
+      "emailValue": "info@zakatok.com",
+      "emailDescription": "Email us anytime",
+      "phone": "Phone Number",
+      "phoneValue": "+966 50 123 4567",
+      "phoneDescription": "Available from 9 AM to 6 PM",
+      "address": "Address",
+      "addressValue": "Riyadh, Saudi Arabia",
+      "addressDescription": "King Fahd Street, Zakat Building",
+      "workingHours": "Working Hours",
+      "workingHoursValue": "Sunday - Thursday",
+      "workingHoursDescription": "9:00 AM - 6:00 PM",
+      "faq": "Frequently Asked Questions",
+      "howToRegisterOrganization": "How can I register as an organization?",
+      "howToRegisterOrganizationAnswer": "You can register through the \"Add Organization\" page and fill in the required data",
+      "donationTypesAvailable": "What donation types are available?",
+      "donationTypesAvailableAnswer": "We support Zakat, Sadaqah, orphan sponsorship, and emergency aid",
+      "areDonationsSecure": "Are donations secure?",
+      "areDonationsSecureAnswer": "Yes, all donations are protected with the highest security and transparency standards",
+      "sendMessage": "Send us a message",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "emailField": "Email",
+      "emailFieldPlaceholder": "example@email.com",
+      "phoneField": "Phone Number",
+      "phoneFieldPlaceholder": "+966 50 123 4567",
+      "subject": "Subject",
+      "subjectPlaceholder": "Message subject",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "sendMessageButton": "Send Message",
+      "validation": {
+        "nameRequired": "Name is required",
+        "emailInvalid": "Invalid email address",
+        "phoneRequired": "Phone number is required",
+        "subjectRequired": "Subject is required",
+        "messageMinLength": "Message must be at least 10 characters"
+      }
+    },
+    "termsAndPrivacy": {
+      "pageTitle": "Terms of Service & Privacy Policy",
+      "pageSubtitle": "Read Zakatok platform terms of service and privacy policy",
+      "lastUpdated": "Last Updated",
+      "effectiveDate": "Effective Date",
+      "termsOfService": {
+        "title": "Terms of Service",
+        "subtitle": "Please read these terms carefully before using the Zakatok platform",
+        "sections": {
+          "acceptance": {
+            "title": "1. Acceptance of Terms",
+            "content": "By using the Zakatok platform, you agree to be bound by these terms and conditions. If you do not agree to any part of these terms, please do not use our platform."
+          },
+          "description": {
+            "title": "2. Service Description",
+            "content": "Zakatok is an electronic platform aimed at facilitating the process of donating Zakat and Sadaqah to approved charitable organizations. We provide services to connect donors with qualified organizations to receive donations."
+          },
+          "userResponsibilities": {
+            "title": "3. User Responsibilities",
+            "content": "Users must provide accurate and correct information, comply with local and international laws, and not use the platform for any illegal or harmful purposes."
+          },
+          "prohibitedUses": {
+            "title": "4. Prohibited Uses",
+            "content": "It is prohibited to use the platform for any illegal activity, send harmful content, attempt to hack the system, or any activity that may harm the platform's reputation or other users."
+          },
+          "intellectualProperty": {
+            "title": "5. Intellectual Property",
+            "content": "All content, designs, and software on the Zakatok platform are protected by copyright. No part of the content may be copied, distributed, or modified without written permission."
+          },
+          "limitationOfLiability": {
+            "title": "6. Limitation of Liability",
+            "content": "Zakatok is not responsible for any direct or indirect damages that may result from using the platform. We provide the service as is without warranties."
+          },
+          "modifications": {
+            "title": "7. Modifications",
+            "content": "We reserve the right to modify these terms at any time. Users will be notified of any material changes through the platform or email."
+          },
+          "termination": {
+            "title": "8. Service Termination",
+            "content": "We may terminate or suspend your account at any time if you violate these terms or if there is any suspicious or harmful activity."
+          },
+          "governingLaw": {
+            "title": "9. Governing Law",
+            "content": "These terms are subject to the laws of the Kingdom of Saudi Arabia. Any disputes will be resolved in the competent courts of the Kingdom."
+          },
+          "contact": {
+            "title": "10. Contact Us",
+            "content": "If you have any questions about these terms, please contact us via email: legal@zakatok.com"
+          }
+        }
+      },
+      "privacyPolicy": {
+        "title": "Privacy Policy",
+        "subtitle": "We are committed to protecting your privacy and personal data",
+        "sections": {
+          "informationCollection": {
+            "title": "1. Information Collection",
+            "content": "We collect information you provide to us directly when registering or using our services, including name, email, phone number, and payment information."
+          },
+          "informationUsage": {
+            "title": "2. Information Usage",
+            "content": "We use your information to provide our services, process donations, communicate with you, improve user experience, and comply with applicable laws."
+          },
+          "informationSharing": {
+            "title": "3. Information Sharing",
+            "content": "We do not sell or rent your personal information to third parties. We may share your information with approved charitable organizations only for the purpose of completing donations."
+          },
+          "dataSecurity": {
+            "title": "4. Data Security",
+            "content": "We use advanced encryption technologies to protect your data. All financial transactions are conducted through secure and encrypted channels."
+          },
+          "cookies": {
+            "title": "5. Cookies",
+            "content": "We use cookies to improve user experience and remember your preferences. You can disable cookies in your browser settings."
+          },
+          "userRights": {
+            "title": "6. User Rights",
+            "content": "You have the right to access, modify, or delete your data. You can request a copy of your data or unsubscribe at any time."
+          },
+          "dataRetention": {
+            "title": "7. Data Retention",
+            "content": "We retain your data as long as your account is active or according to legal requirements. We will delete your data when the account is cancelled or the legal period expires."
+          },
+          "childrenPrivacy": {
+            "title": "8. Children's Privacy",
+            "content": "Our services are not intended for children under 13 years of age. We do not collect personal information from children without parental consent."
+          },
+          "internationalTransfers": {
+            "title": "9. International Data Transfers",
+            "content": "Your data may be transferred to other countries for service processing. We ensure that all transfers are made according to appropriate protection standards."
+          },
+          "policyUpdates": {
+            "title": "10. Policy Updates",
+            "content": "We may update this privacy policy from time to time. We will notify you of any material changes via email or the platform."
+          }
+        }
+      },
+      "navigation": {
+        "termsOfService": "Terms of Service",
+        "privacyPolicy": "Privacy Policy",
+        "backToHome": "Back to Home",
+        "print": "Print",
+        "download": "Download PDF"
       }
     }
   }
