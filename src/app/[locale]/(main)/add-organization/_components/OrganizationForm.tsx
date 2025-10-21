@@ -779,7 +779,6 @@ export function OrganizationForm({
           </div>
         )}
 
-        {/* Navigation */}
         <div className="flex flex-col items-center gap-4 sm:flex-row justify-between pt-6 border-t border-gray-200">
           <button
             type="button"

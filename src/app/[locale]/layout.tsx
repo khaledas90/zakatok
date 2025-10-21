@@ -10,6 +10,7 @@ import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/Layout/header/header";
 import Footer from "@/components/Layout/footer/footer";
 import StoreProvider from "@/store/StoreProvider";
+import ScrollButtons from "@/components/common/ScrollButtons";
 
 // English font
 const inter = Inter({
@@ -70,6 +71,7 @@ export default async function RootLayout({
               <Toaster richColors position="top-right" />
               <SidebarProvider>{children}</SidebarProvider>
               <Footer />
+              <ScrollButtons />
             </Providers>
           </StoreProvider>
         </body>
