@@ -250,3 +250,57 @@
 .animate-fade-in-delay-2 {
   animation: fade-in-delay-2 1.6s ease-out forwards;
 }
+
+.phone-input .PhoneInputInput {
+  border: 1px solid #d9d9d9;
+  direction: ltr;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: all 0.2s;
+  direction: ltr;
+  text-align: left;
+}
+
+.phone-input .PhoneInputInput:focus {
+  outline: none;
+  border-color: #2c7242;
+  box-shadow: 0 0 0 2px rgba(44, 114, 66, 0.2);
+}
+
+.phone-input .PhoneInputInput.error {
+  border-color: #e52836;
+}
+
+.phone-input .PhoneInputInput.error:focus {
+  border-color: #e52836;
+  box-shadow: 0 0 0 2px rgba(229, 40, 54, 0.2);
+}
+
+.phone-input .PhoneInputCountrySelect {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  padding: 8px;
+  margin-right: 8px;
+  background: white;
+  transition: all 0.2s;
+}
+
+.phone-input .PhoneInputCountrySelect:focus {
+  outline: none;
+  border-color: #2c7242;
+  box-shadow: 0 0 0 2px rgba(44, 114, 66, 0.2);
+}
+
+.phone-input .PhoneInputCountrySelect.error {
+  border-color: #e52836;
+}
+
+.phone-input .PhoneInputCountrySelect.error:focus {
+  border-color: #e52836;
+  box-shadow: 0 0 0 2px rgba(229, 40, 54, 0.2);
+}
+
+.phone-input .PhoneInputCountryFlag {
+  margin-right: 8px;
+}
