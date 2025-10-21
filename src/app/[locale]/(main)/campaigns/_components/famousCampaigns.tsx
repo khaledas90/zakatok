@@ -1,9 +1,78 @@
 import CampaignsCard from "@/components/common/campaignscard";
 import { ChevronLeft } from "lucide-react";
 import React from "react";
-import { projects } from "../page";
-
+import image1 from "@/assets/CampaignsOne.svg";
+import image2 from "@/assets/CampaignsTwo.svg";
+import image3 from "@/assets/CampaignsThree.svg";
 export default function FamousCampaigns() {
+  const projects = [
+    {
+      id: "1",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image1,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: ["verified", "trending"],
+    },
+    {
+      id: "2",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image2,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: [],
+    },
+    {
+      id: "3",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image3,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: [],
+    },
+    {
+      id: "4",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image2,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: ["urgent"],
+    },
+    {
+      id: "5",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image3,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: ["verified"],
+    },
+    {
+      id: "6",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image1,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: ["verified"],
+    },
+  ];
   return (
     <div className="bg-[#d6efde] rounded-lg p-6 mb-8">
       <div className="flex items-center justify-between mb-6">

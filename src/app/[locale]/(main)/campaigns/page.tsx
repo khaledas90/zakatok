@@ -22,76 +22,75 @@ import ScrollAnimation, {
   FadeIn,
 } from "@/components/common/ScrollAnimation";
 
-export const projects = [
-  {
-    id: "1",
-    title: "هنا اسم الحملة بشكل كامل",
-    description:
-      "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
-    image: image1,
-    rating: 5,
-    ratingCount: 12339,
-    beneficiaries: "12,234k",
-    badges: ["verified", "trending"],
-  },
-  {
-    id: "2",
-    title: "هنا اسم الحملة بشكل كامل",
-    description:
-      "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
-    image: image2,
-    rating: 5,
-    ratingCount: 12339,
-    beneficiaries: "12,234k",
-    badges: [],
-  },
-  {
-    id: "3",
-    title: "هنا اسم الحملة بشكل كامل",
-    description:
-      "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
-    image: image3,
-    rating: 5,
-    ratingCount: 12339,
-    beneficiaries: "12,234k",
-    badges: [],
-  },
-  {
-    id: "4",
-    title: "هنا اسم الحملة بشكل كامل",
-    description:
-      "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
-    image: image2,
-    rating: 5,
-    ratingCount: 12339,
-    beneficiaries: "12,234k",
-    badges: ["urgent"],
-  },
-  {
-    id: "5",
-    title: "هنا اسم الحملة بشكل كامل",
-    description:
-      "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
-    image: image3,
-    rating: 5,
-    ratingCount: 12339,
-    beneficiaries: "12,234k",
-    badges: ["verified"],
-  },
-  {
-    id: "6",
-    title: "هنا اسم الحملة بشكل كامل",
-    description:
-      "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
-    image: image1,
-    rating: 5,
-    ratingCount: 12339,
-    beneficiaries: "12,234k",
-    badges: ["verified"],
-  },
-];
-
-export default function ProjectsPage() {
+export default function campaigns() {
+  const projects = [
+    {
+      id: "1",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image1,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: ["verified", "trending"],
+    },
+    {
+      id: "2",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image2,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: [],
+    },
+    {
+      id: "3",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image3,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: [],
+    },
+    {
+      id: "4",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image2,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: ["urgent"],
+    },
+    {
+      id: "5",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image3,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: ["verified"],
+    },
+    {
+      id: "6",
+      title: "هنا اسم الحملة بشكل كامل",
+      description:
+        "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من",
+      image: image1,
+      rating: 5,
+      ratingCount: 12339,
+      beneficiaries: "12,234k",
+      badges: ["verified"],
+    },
+  ];
   const [currentPage, setCurrentPage] = useState(1);
 
   return (
