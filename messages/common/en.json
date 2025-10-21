@@ -18,11 +18,7 @@
       "Clear Search": "Clear Search",
       "Add Organization": "Add Organization"
     },
-    "footer": {
-      "About Us": "About Us",
-      "Contact Us": "Contact Us",
-      "Our Policy": "Our Policy"
-    },
+
     "hero": {
       "slide1": {
         "title": "Who is it that would loan Allah a goodly loan so He may multiply it for him many times over? And it is Allah who withholds and grants abundance, and to Him you will be returned.",
@@ -51,13 +47,166 @@
       "subtitle": "Choose a country to start donating and help those in need",
       "notSeeCountry": "Don't see your country?",
       "suggestNewCountry": "Suggest a new country",
+      "ctaDescription": "Don't see your country? Help us expand our reach by suggesting new countries where we can make a difference.",
+      "pageTitle": "Countries We Serve",
+      "pageSubtitle": "Discover the countries where we make a difference through your generous donations",
+      "searchPlaceholder": "Search countries...",
+      "filterByRegion": "Filter by Region",
+      "allRegions": "All Regions",
+      "totalCountries": "Countries Served",
+      "totalBeneficiaries": "Total Beneficiaries",
+      "activeProjects": "Active Projects",
+      "noResultsFound": "No countries found",
+      "noResultsDescription": "Try adjusting your search terms or filter criteria",
+      "clearFilters": "Clear Filters",
       "countryNames": {
         "egypt": "Egypt",
         "saudiArabia": "Saudi Arabia",
         "uae": "UAE",
         "jordan": "Jordan",
-        "qatar": "Qatar"
-      }
+        "qatar": "Qatar",
+        "kuwait": "Kuwait",
+        "bahrain": "Bahrain",
+        "oman": "Oman",
+        "lebanon": "Lebanon",
+        "syria": "Syria",
+        "palestine": "Palestine",
+        "yemen": "Yemen",
+        "libya": "Libya",
+        "tunisia": "Tunisia",
+        "algeria": "Algeria",
+        "morocco": "Morocco"
+      },
+      "regions": {
+        "northAfrica": "North Africa",
+        "gulf": "Gulf Region",
+        "levant": "Levant",
+        "peninsula": "Arabian Peninsula"
+      },
+      "countryDetails": {
+        "egypt": {
+          "description": "The largest Arab country by population, Egypt faces significant challenges in healthcare, education, and poverty alleviation.",
+          "population": "104.3M",
+          "povertyRate": "32.5%",
+          "activeProjects": "156",
+          "beneficiaries": "2.3M",
+          "focusAreas": [
+            "Healthcare",
+            "Education",
+            "Poverty Relief",
+            "Emergency Aid"
+          ],
+          "recentAchievements": [
+            "Built 12 new schools in rural areas",
+            "Provided medical care to 50,000 families",
+            "Distributed food aid to 100,000 people"
+          ]
+        },
+        "saudiArabia": {
+          "description": "A key regional power with diverse humanitarian needs, particularly in supporting vulnerable communities and refugees.",
+          "population": "35.3M",
+          "povertyRate": "12.7%",
+          "activeProjects": "89",
+          "beneficiaries": "1.8M",
+          "focusAreas": [
+            "Refugee Support",
+            "Healthcare",
+            "Education",
+            "Social Services"
+          ],
+          "recentAchievements": [
+            "Supported 25,000 refugee families",
+            "Established 8 healthcare centers",
+            "Provided scholarships to 5,000 students"
+          ]
+        },
+        "uae": {
+          "description": "A modern nation with significant expatriate populations requiring support in various social services.",
+          "population": "9.9M",
+          "povertyRate": "5.2%",
+          "activeProjects": "67",
+          "beneficiaries": "890K",
+          "focusAreas": [
+            "Expatriate Support",
+            "Healthcare",
+            "Education",
+            "Community Development"
+          ],
+          "recentAchievements": [
+            "Launched community centers in 6 emirates",
+            "Provided healthcare to 30,000 workers",
+            "Supported 2,000 families with education"
+          ]
+        },
+        "jordan": {
+          "description": "A stable nation hosting large refugee populations, requiring extensive humanitarian support.",
+          "population": "11.2M",
+          "povertyRate": "15.7%",
+          "activeProjects": "134",
+          "beneficiaries": "1.2M",
+          "focusAreas": [
+            "Refugee Support",
+            "Healthcare",
+            "Education",
+            "Livelihood Programs"
+          ],
+          "recentAchievements": [
+            "Supported 40,000 Syrian refugees",
+            "Built 15 schools in refugee camps",
+            "Provided vocational training to 8,000 people"
+          ]
+        },
+        "qatar": {
+          "description": "A wealthy nation with significant migrant worker populations requiring social support and protection.",
+          "population": "2.9M",
+          "povertyRate": "3.1%",
+          "activeProjects": "45",
+          "beneficiaries": "320K",
+          "focusAreas": [
+            "Worker Rights",
+            "Healthcare",
+            "Education",
+            "Social Integration"
+          ],
+          "recentAchievements": [
+            "Established worker support centers",
+            "Provided healthcare to 15,000 workers",
+            "Launched education programs for 3,000 children"
+          ]
+        }
+      },
+      "impactStats": {
+        "title": "Our Impact Across Countries",
+        "subtitle": "Making a difference through your generous donations",
+        "totalDonations": "Total Donations",
+        "livesChanged": "Lives Changed",
+        "projectsCompleted": "Projects Completed",
+        "countriesReached": "Countries Reached",
+        "transparency": "Transparency"
+      },
+      "howItWorks": {
+        "title": "How We Help Countries",
+        "subtitle": "Our comprehensive approach to humanitarian aid",
+        "step1": {
+          "title": "Assessment",
+          "description": "We assess the specific needs of each country and identify priority areas for intervention."
+        },
+        "step2": {
+          "title": "Planning",
+          "description": "We develop targeted programs and partnerships with local organizations."
+        },
+        "step3": {
+          "title": "Implementation",
+          "description": "We execute projects with transparency and accountability, ensuring maximum impact."
+        },
+        "step4": {
+          "title": "Monitoring",
+          "description": "We continuously monitor progress and adjust strategies based on results and feedback."
+        }
+      },
+      "focusAreas": "Focus Areas",
+      "recentAchievements": "Recent Achievements",
+      "more": "more"
     },
     "gazaEmergency": {
       "title": "Emergency Appeal for Gaza",
@@ -386,6 +535,106 @@
         "print": "Print",
         "download": "Download PDF"
       }
+    },
+
+    "notFound": {
+      "title": "Page Not Found",
+      "subtitle": "Oops! The page you're looking for doesn't exist",
+      "description": "The page you're trying to access might have been moved, deleted, or you may have entered the wrong URL.",
+      "errorCode": "404",
+      "help": {
+        "title": "Need Help?",
+        "description": "If you can't find what you're looking for, our support team is here to help.",
+        "contactSupport": "Contact Support"
+      },
+      "suggestions": {
+        "title": "What can you do?",
+        "checkUrl": "Check the URL for typos",
+        "goHome": "Go back to the homepage",
+        "browseCountries": "Browse our countries",
+        "exploreCampaigns": "Explore campaigns",
+        "contactSupport": "Contact support"
+      },
+      "actions": {
+        "goHome": "Go Home",
+        "browseCountries": "Browse Countries",
+        "exploreCampaigns": "Explore Campaigns",
+        "contactSupport": "Contact Support",
+        "goBack": "Go Back"
+      },
+      "helpfulLinks": {
+        "title": "روابط مفيدة",
+        "home": "الرئيسية",
+        "countries": "الدول",
+        "campaigns": "الحملات",
+        "contactUs": "اتصل بنا",
+        "aboutUs": "معلومات عنا",
+        "termsOfService": "Terms of Service",
+        "privacyPolicy": "Privacy Policy"
+      }
+    },
+    "footer": {
+      "title": "Zakatok",
+      "description": "Making a difference through charitable giving and community support",
+      "sections": {
+        "company": {
+          "title": "Company",
+          "links": {
+            "aboutUs": "About Us",
+            "ourMission": "Our Mission",
+            "team": "Our Team",
+            "careers": "Careers",
+            "news": "News & Updates",
+            "termsOfService": "Terms of Service",
+            "privacyPolicy": "Privacy Policy"
+          }
+        },
+        "services": {
+          "title": "Services",
+          "links": {
+            "countries": "Countries",
+            "campaigns": "Campaigns",
+            "donations": "Donations",
+            "volunteer": "Volunteer",
+            "partnerships": "Partnerships",
+            "termsOfService": "Terms of Service",
+            "privacyPolicy": "Privacy Policy"
+          }
+        },
+        "support": {
+          "title": "Support",
+          "links": {
+            "helpCenter": "Help Center",
+            "contactUs": "Contact Us",
+            "faq": "FAQ",
+            "reportIssue": "Report Issue",
+            "feedback": "Feedback"
+          }
+        }
+      },
+      "helpfulLinks": {
+        "title": "Quick Links",
+        "home": "Home",
+        "countries": "Countries",
+        "campaigns": "Campaigns",
+        "contactUs": "Contact Us",
+        "aboutUs": "About Us",
+        "termsOfService": "Terms of Service",
+        "privacyPolicy": "Privacy Policy"
+      },
+      "paymentMethods": {
+        "title": "Secure Payment Methods",
+        "description": "Your donations are processed securely"
+      },
+      "quickLinks": {
+        "title": "Quick Links"
+      },
+      "copyright": "All rights reserved",
+      "poweredBy": "Powered by",
+      "madeWith": "Made with",
+      "love": "love",
+      "for": "for",
+      "community": "community"
     }
   }
 }
