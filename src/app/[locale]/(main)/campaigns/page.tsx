@@ -18,9 +18,8 @@ import FamousCampaigns from "./_components/famousCampaigns";
 import PageLoadAnimation from "@/components/common/PageLoadAnimation";
 import ScrollAnimation, {
   StaggeredAnimation,
-  SlideUp,
-  FadeIn,
 } from "@/components/common/ScrollAnimation";
+import SuccessModal from "./[slug]/_components/successModal";
 
 export default function campaigns() {
   const projects = [
@@ -95,15 +94,11 @@ export default function campaigns() {
 
   return (
     <div className="min-h-screen bg-[#f5f5f5]">
-      <PageLoadAnimation delay={100}>
-        <AlertBanner message="هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي." />
-      </PageLoadAnimation>
-
-      <main className="container mx-auto px-4 pt-8">
+      <main className="container mx-auto px-4 pt-5">
         <ScrollAnimation animation="slideUp" delay={200}>
           <FamousCampaigns />
         </ScrollAnimation>
-
+        {/* <SuccessModal isOpen={true} onClose={() => {}} /> */}
         <div className="flex flex-col lg:flex-row gap-8 mb-8">
           <ScrollAnimation animation="slideLeft" delay={300}>
             <div className="lg:w-[350px] mt-6">

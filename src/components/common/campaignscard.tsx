@@ -3,14 +3,17 @@
 import Image from "next/image";
 import { Eye, Star } from "lucide-react";
 import { useState } from "react";
+import { DonationModal } from "@/app/[locale]/(main)/campaigns/_components/donationModal";
+import Link from "next/link";
 
 interface CampaignscardProps {
   id: string;
   title: string;
   description: string;
-  image: string | any; // Allow both string paths and imported images
+  image: string | any;
   rating: number;
   ratingCount: number;
+  isDescription?: boolean;
   beneficiaries: string;
   badges?: Array<"verified" | "trending" | "urgent">;
 }
@@ -18,6 +21,7 @@ interface CampaignscardProps {
 export default function CampaignsCard({
   title,
   description,
+  isDescription = true,
   image,
   rating,
   ratingCount,
@@ -28,11 +32,11 @@ export default function CampaignsCard({
 
   return (
     <div
-      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 group cursor-pointer h-[350px] flex flex-col"
+      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 group cursor-pointer h-[280px] sm:h-[320px] md:h-[365px] lg:h-[380px] flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative h-48 overflow-hidden flex-shrink-0">
+      <div className="relative h-32 sm:h-40 md:h-48 lg:h-52 overflow-hidden flex-shrink-0">
         <Image
           src={image?.src || image || "/placeholder.svg"}
           alt={title}
@@ -44,11 +48,11 @@ export default function CampaignsCard({
           priority={false}
         />
         {badges.length > 0 && (
-          <div className="absolute top-3 left-3 flex gap-2">
+          <div className="absolute top-2 sm:top-3 left-2 sm:left-3 flex gap-1 sm:gap-2">
             {badges.includes("verified") && (
-              <div className="bg-[#2c7242] text-white rounded-full p-1.5 shadow-lg">
+              <div className="bg-[#2c7242] text-white rounded-full p-1 sm:p-1.5 shadow-lg">
                 <svg
-                  className="w-4 h-4"
+                  className="w-3 h-3 sm:w-4 sm:h-4"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -61,9 +65,9 @@ export default function CampaignsCard({
               </div>
             )}
             {badges.includes("trending") && (
-              <div className="bg-[#f79f1a] text-white rounded-full p-1.5 shadow-lg">
+              <div className="bg-[#f79f1a] text-white rounded-full p-1 sm:p-1.5 shadow-lg">
                 <svg
-                  className="w-4 h-4"
+                  className="w-3 h-3 sm:w-4 sm:h-4"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -76,9 +80,9 @@ export default function CampaignsCard({
               </div>
             )}
             {badges.includes("urgent") && (
-              <div className="bg-[#e52836] text-white rounded-full p-1.5 shadow-lg animate-pulse">
+              <div className="bg-[#e52836] text-white rounded-full p-1 sm:p-1.5 shadow-lg animate-pulse">
                 <svg
-                  className="w-4 h-4"
+                  className="w-3 h-3 sm:w-4 sm:h-4"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -97,32 +101,34 @@ export default function CampaignsCard({
             isHovered ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="absolute bottom-4 right-4 left-4">
-            <button className="w-full bg-white text-[#2c7242] py-2 rounded-lg font-semibold hover:bg-[#f5f5f5] transition-colors">
-              تبرع الآن
-            </button>
+          <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 flex justify-center items-center right-2 sm:right-3 md:right-4 left-2 sm:left-3 md:left-4">
+            <DonationModal />
           </div>
         </div>
       </div>
 
-      <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-lg font-bold text-[#202121] mb-2 line-clamp-2 group-hover:text-[#2c7242] transition-colors">
-          {title}
-        </h3>
-        <p className="text-sm text-[#6b7280] mb-2 line-clamp-2 ">
-          {description}
-        </p>
+      <div className="p-3 sm:p-4 flex flex-col flex-grow">
+        <Link href={`/campaigns/slug`}>
+          <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#202121] mb-1 sm:mb-2 line-clamp-2 group-hover:text-[#2c7242] transition-colors">
+            {title}
+          </h3>
+          {isDescription && (
+            <p className="text-xs sm:text-sm text-[#6b7280] mb-1 sm:mb-2 line-clamp-2">
+              {description}
+            </p>
+          )}
+        </Link>
 
-        <div className="flex items-center justify-between pt-3 border-t border-[#d9d9d9] mt-auto">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-semibold text-[#202121]">
-              {ratingCount.toLocaleString()}
+        <div className="flex items-center justify-between pt-2  sm:pt-3 border-t border-[#d9d9d9] mt-auto">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <span className="text-xs sm:text-sm font-semibold text-[#202121]">
+              {ratingCount.toLocaleString("en-US")}
             </span>
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-4 h-4 ${
+                  className={`w-3 h-3 sm:w-4 sm:h-4 ${
                     i < rating
                       ? "fill-[#f79f1a] text-[#f79f1a]"
                       : "fill-[#d9d9d9] text-[#d9d9d9]"
@@ -132,9 +138,9 @@ export default function CampaignsCard({
             </div>
           </div>
 
-          <div className="flex items-center gap-1.5 text-[#6b7280]">
-            <span className="text-sm">{beneficiaries}</span>
-            <Eye className="w-4 h-4" />
+          <div className="flex items-center gap-1 sm:gap-1.5 text-[#6b7280]">
+            <span className="text-xs sm:text-sm">{beneficiaries}</span>
+            <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
           </div>
         </div>
       </div>

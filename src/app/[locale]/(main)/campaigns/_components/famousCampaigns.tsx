@@ -4,6 +4,7 @@ import React from "react";
 import image1 from "@/assets/CampaignsOne.svg";
 import image2 from "@/assets/CampaignsTwo.svg";
 import image3 from "@/assets/CampaignsThree.svg";
+import FamousSlider from "./FamousSlider";
 export default function FamousCampaigns() {
   const projects = [
     {
@@ -76,21 +77,17 @@ export default function FamousCampaigns() {
   return (
     <div className="bg-[#d6efde] rounded-lg p-6 mb-8">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold text-[#202121]">مشهور في مصر</h1>
-        <button className="text-[#2c7242] hover:text-[#245a35] font-semibold flex items-center  transition-colors">
-          <span>عرض المزيد</span>
-          <ChevronLeft className="w-5 h-5" />
+        <h1 className="lg:text-3xl md:text-xl sm:text-lg text-base font-bold text-[#202121]">
+          مشهور في مصر
+        </h1>
+        <button className="text-[#2c7242] lg:text-base md:text-sm sm:text-xs text-xs hover:text-[#245a35] font-semibold flex items-center  transition-colors">
+          <span className="lg:text-base md:text-sm sm:text-xs text-xs font-semibold">
+            عرض المزيد
+          </span>
+          <ChevronLeft className="lg:w-5 lg:h-5 md:w-4 md:h-4 w-3 h-3" />
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
-        {projects.slice(0, 5).map((project) => (
-          <CampaignsCard
-            key={project.id}
-            {...project}
-            badges={project.badges as ("verified" | "trending" | "urgent")[]}
-          />
-        ))}
-      </div>
+      <FamousSlider projects={projects} />
     </div>
   );
 }
