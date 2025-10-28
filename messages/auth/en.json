@@ -1,16 +1,78 @@
 {
   "auth": {
     "login": {
-      "Welcome Back": "Welcome Back",
-      "sign in to your account": "Sign in to your account",
-      "Email": "Email",
-      "Enter your email": "Enter your email",
-      "Password": "Password",
-      "Enter your password": "Enter your password",
-      "Remember Me": "Remember Me",
-      "Forgot Password?": "Forgot Password?",
-      "Login": "Login",
-      "Login successful!": "Login successful!"
+      "title": "Sign In",
+      "subtitle": "Enter your information to sign in to your account",
+      "email": "Email",
+      "emailPlaceholder": "example@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "forgotPassword": "Forgot Password?",
+      "loginButton": "Sign In",
+      "loggingIn": "Signing in...",
+      "signInWithGoogle": "Sign in with Google",
+      "signInWithFacebook": "Sign in with Facebook",
+      "or": "or",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create New Account",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 6 characters long"
+    },
+    "signup": {
+      "title": "Create Account",
+      "subtitle": "Fill in the following information to create your account",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email",
+      "emailPlaceholder": "example@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "confirmPassword": "Confirm Password",
+      "signupButton": "Create Account",
+      "creatingAccount": "Creating account...",
+      "signUpWithGoogle": "Sign up with Google",
+      "signUpWithFacebook": "Sign up with Facebook",
+      "or": "or",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign In",
+      "nameRequired": "Full name is required",
+      "nameMinLength": "Name must be at least 3 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 6 characters long",
+      "confirmPasswordRequired": "Password confirmation is required",
+      "passwordsDontMatch": "Passwords do not match"
+    }
+  },
+  "map": {
+    "loading": "Loading map...",
+    "capital": "Capital",
+    "population": "Population",
+    "activeProjects": "Active Projects",
+    "beneficiaries": "Beneficiaries",
+    "close": "Close",
+    "searchLocations": "Search locations...",
+    "noLocationsFound": "No locations found",
+    "tryDifferentSearch": "Try a different search term",
+    "countries": {
+      "egypt": {
+        "description": "The largest Arab country by population, Egypt faces significant challenges in healthcare, education, and poverty alleviation."
+      },
+      "saudiArabia": {
+        "description": "A key regional power with diverse humanitarian needs, particularly in supporting vulnerable communities and refugees."
+      },
+      "uae": {
+        "description": "A modern nation with significant expatriate populations requiring support in various social services."
+      },
+      "qatar": {
+        "description": "A wealthy nation with significant migrant worker populations requiring social support and protection."
+      },
+      "jordan": {
+        "description": "A stable nation hosting large refugee populations, requiring extensive humanitarian support."
+      }
     }
   }
 }

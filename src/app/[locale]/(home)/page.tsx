@@ -2,7 +2,7 @@ import React from "react";
 import { Hero } from "./_components/hero";
 import Countries from "./_components/countries";
 import GazaEmergency from "./_components/gazaEmergency";
-import { GlobalImpact } from "./_components/globalImpact";
+import { MapSection } from "./_components/mapSection";
 import PageLoadAnimation, {
   SlideUpOnLoad,
   FadeInOnLoad,
@@ -24,9 +24,7 @@ export default function page() {
         <Countries />
       </ScrollAnimation>
 
-      <ScrollAnimation animation="scaleUp" delay={100}>
-        <GlobalImpact />
-      </ScrollAnimation>
+      <MapSection />
 
       <ScrollAnimation animation="fadeIn" delay={300}>
         <GazaEmergency />

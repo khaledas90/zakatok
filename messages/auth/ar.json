@@ -1,16 +1,78 @@
 {
   "auth": {
     "login": {
-      "Welcome Back": "مرحبًا بعودتك",
-      "sign in to your account": "قم بتسجيل الدخول إلى حسابك",
-      "Email": "البريد الإلكتروني",
-      "Enter your email": "أدخل بريدك الإلكتروني",
-      "Password": "كلمة المرور",
-      "Enter your password": "أدخل كلمة المرور",
-      "Remember Me": "تذكرني",
-      "Forgot Password?": "هل نسيت كلمة المرور؟",
-      "Login": "تسجيل الدخول",
-      "Login successful!": "تم تسجيل الدخول بنجاح!"
+      "title": "تسجيل الدخول",
+      "subtitle": "ادخل بياناتك لتسجيل الدخول إلى حسابك",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "example@email.com",
+      "password": "كلمة المرور",
+      "passwordPlaceholder": "••••••••",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "loginButton": "تسجيل الدخول",
+      "loggingIn": "جاري تسجيل الدخول...",
+      "signInWithGoogle": "تسجيل الدخول بـ Google",
+      "signInWithFacebook": "تسجيل الدخول بـ Facebook",
+      "or": "أو",
+      "noAccount": "ليس لديك حساب؟",
+      "createAccount": "إنشاء حساب جديد",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح",
+      "passwordRequired": "كلمة المرور مطلوبة",
+      "passwordMinLength": "كلمة المرور يجب أن تكون 6 أحرف على الأقل"
+    },
+    "signup": {
+      "title": "إنشاء حساب جديد",
+      "subtitle": "املأ البيانات التالية لإنشاء حسابك",
+      "name": "الاسم الكامل",
+      "namePlaceholder": "أدخل اسمك الكامل",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "example@email.com",
+      "password": "كلمة المرور",
+      "passwordPlaceholder": "••••••••",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "signupButton": "إنشاء حساب",
+      "creatingAccount": "جاري إنشاء الحساب...",
+      "signUpWithGoogle": "التسجيل بـ Google",
+      "signUpWithFacebook": "التسجيل بـ Facebook",
+      "or": "أو",
+      "hasAccount": "لديك حساب بالفعل؟",
+      "signIn": "تسجيل الدخول",
+      "nameRequired": "الاسم الكامل مطلوب",
+      "nameMinLength": "الاسم يجب أن يكون على الأقل 3 أحرف",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح",
+      "passwordRequired": "كلمة المرور مطلوبة",
+      "passwordMinLength": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+      "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب",
+      "passwordsDontMatch": "كلمات المرور غير متطابقة"
+    }
+  },
+  "map": {
+    "loading": "جاري تحميل الخريطة...",
+    "capital": "العاصمة",
+    "population": "السكان",
+    "activeProjects": "المشاريع النشطة",
+    "beneficiaries": "المستفيدين",
+    "close": "إغلاق",
+    "searchLocations": "ابحث عن الموقع...",
+    "noLocationsFound": "لم يتم العثور على مواقع",
+    "tryDifferentSearch": "جرب مصطلح بحث مختلف",
+    "countries": {
+      "egypt": {
+        "description": "أكبر دولة عربية من حيث عدد السكان، تواجه مصر تحديات كبيرة في الرعاية الصحية والتعليم ومكافحة الفقر."
+      },
+      "saudiArabia": {
+        "description": "قوة إقليمية رئيسية مع احتياجات إنسانية متنوعة، خاصة في دعم المجتمعات الضعيفة واللاجئين."
+      },
+      "uae": {
+        "description": "دولة حديثة مع أعداد كبيرة من المغتربين الذين يحتاجون إلى الدعم في مختلف الخدمات الاجتماعية."
+      },
+      "qatar": {
+        "description": "دولة غنية مع أعداد كبيرة من العمال المهاجرين الذين يحتاجون إلى الدعم الاجتماعي والحماية."
+      },
+      "jordan": {
+        "description": "دولة مستقرة تستضيف أعداداً كبيرة من اللاجئين، تحتاج إلى دعم إنساني واسع."
+      }
     }
   }
 }

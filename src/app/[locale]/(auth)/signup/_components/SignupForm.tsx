@@ -14,50 +14,64 @@ import {
 } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { useRouter } from "next/navigation";
-import { Eye, EyeOff, Loader2, Mail, Lock } from "lucide-react";
+import { Eye, EyeOff, Loader2, Mail, Lock, User } from "lucide-react";
 import Link from "next/link";
 import { SocialLoginButton } from "@/components/auth/SocialLoginButton";
 import { useTranslations } from "next-intl";
 
-interface SignInFormData {
+interface SignUpFormData {
+  name: string;
   email: string;
   password: string;
+  confirmPassword: string;
 }
 
-export default function LoginForm() {
+export default function SignupForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const router = useRouter();
-  const t = useTranslations("auth.login");
+  const t = useTranslations("auth.signup");
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignInFormData>();
+    watch,
+  } = useForm<SignUpFormData>();
 
-  const onSubmit = async (data: SignInFormData) => {
+  const password = watch("password");
+
+  const onSubmit = async (data: SignUpFormData) => {
     setLoading(true);
     setError("");
-    console.log("Login data:", data);
+
+    if (data.password !== data.confirmPassword) {
+      setError(t("passwordsDontMatch"));
+      setLoading(false);
+      return;
+    }
+
+    console.log("Signup data:", data);
     setTimeout(() => {
       setLoading(false);
+      // router.push("/admin");
     }, 2000);
   };
 
-  const handleGoogleLogin = () => {
-    console.log("Google login");
+  const handleGoogleSignup = () => {
+    console.log("Google signup");
   };
 
-  const handleFacebookLogin = () => {
-    console.log("Facebook login");
+  const handleFacebookSignup = () => {
+    console.log("Facebook signup");
   };
 
   return (
-    <div className="w-full max-w-2xl   mx-auto animate-in fade-in-0 zoom-in-95 duration-500">
+    <div className="w-full max-w-2xl mx-auto animate-in fade-in-0 zoom-in-95 duration-500">
       <Card className="overflow-hidden border-0 shadow-2xl">
-        <div className="relative bg-gradient-to-br from-main via-main to-primary h-2">
+        <div className="relative bg-gradient-to-br from-primary via-primary to-main h-2">
           <div className="absolute inset-0 opacity-50">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
           </div>
@@ -65,8 +79,8 @@ export default function LoginForm() {
 
         <CardHeader className="space-y-3 bg-gradient-to-br from-gray-50 to-white pb-6 pt-8">
           <div className="flex flex-col items-center space-y-2">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-main/10 rounded-full mb-2">
-              <Lock className="w-8 h-8 text-main" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-2">
+              <User className="w-8 h-8 text-primary" />
             </div>
             <CardTitle className="text-3xl font-bold text-center text-gray-900 font-arabic">
               {t("title")}
@@ -87,7 +101,37 @@ export default function LoginForm() {
             </Alert>
           )}
 
+          {/* Signup Form */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-gray-700 font-arabic">
+                {t("name")}
+              </Label>
+              <div className="relative">
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Input
+                  id="name"
+                  {...register("name", {
+                    required: t("nameRequired"),
+                    minLength: {
+                      value: 3,
+                      message: t("nameMinLength"),
+                    },
+                  })}
+                  type="text"
+                  placeholder={t("namePlaceholder")}
+                  className={`pl-10 ${
+                    errors.name ? "border-red-500" : ""
+                  } transition-all duration-200 focus:ring-2 focus:ring-primary/20`}
+                />
+              </div>
+              {errors.name && (
+                <p className="text-sm text-red-500 animate-in slide-in-from-top-1">
+                  {errors.name.message}
+                </p>
+              )}
+            </div>
+
             <div className="space-y-2">
               <Label htmlFor="email" className="text-gray-700 font-arabic">
                 {t("email")}
@@ -108,7 +152,7 @@ export default function LoginForm() {
                   placeholder={t("emailPlaceholder")}
                   className={`pl-10 ${
                     errors.email ? "border-red-500" : ""
-                  } transition-all duration-200 focus:ring-2 focus:ring-main/20`}
+                  } transition-all duration-200 focus:ring-2 focus:ring-primary/20`}
                 />
               </div>
               {errors.email && (
@@ -138,7 +182,7 @@ export default function LoginForm() {
                   placeholder={t("passwordPlaceholder")}
                   className={`pl-10 pr-10 ${
                     errors.password ? "border-red-500" : ""
-                  } transition-all duration-200 focus:ring-2 focus:ring-main/20`}
+                  } transition-all duration-200 focus:ring-2 focus:ring-primary/20`}
                 />
                 <Button
                   type="button"
@@ -164,30 +208,71 @@ export default function LoginForm() {
               )}
             </div>
 
-            <div className="flex items-center justify-between text-sm">
-              <Link
-                href="/forgot-password"
-                className="text-main hover:text-main/80 transition-colors duration-200 font-arabic"
+            <div className="space-y-2">
+              <Label
+                htmlFor="confirmPassword"
+                className="text-gray-700 font-arabic"
               >
-                {t("forgotPassword")}
-              </Link>
+                {t("confirmPassword")}
+              </Label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Input
+                  id="confirmPassword"
+                  dir="ltr"
+                  {...register("confirmPassword", {
+                    required: t("confirmPasswordRequired"),
+                    validate: (value) =>
+                      value === password || t("passwordsDontMatch"),
+                  })}
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder={t("passwordPlaceholder")}
+                  className={`pl-10 pr-10 ${
+                    errors.confirmPassword ? "border-red-500" : ""
+                  } transition-all duration-200 focus:ring-2 focus:ring-primary/20`}
+                />
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  aria-label={
+                    showConfirmPassword
+                      ? "إخفاء كلمة المرور"
+                      : "إظهار كلمة المرور"
+                  }
+                >
+                  {showConfirmPassword ? (
+                    <EyeOff className="h-4 w-4 text-gray-400" />
+                  ) : (
+                    <Eye className="h-4 w-4 text-gray-400" />
+                  )}
+                </Button>
+              </div>
+              {errors.confirmPassword && (
+                <p className="text-sm text-red-500 animate-in slide-in-from-top-1">
+                  {errors.confirmPassword.message}
+                </p>
+              )}
             </div>
 
             <Button
               type="submit"
               disabled={loading}
-              className="w-full bg-main hover:bg-main/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] font-arabic"
+              className="w-full bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] font-arabic"
             >
               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {t("loggingIn")}
+                  {t("creatingAccount")}
                 </>
               ) : (
-                t("loginButton")
+                t("signupButton")
               )}
             </Button>
           </form>
+
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t border-gray-300"></span>
@@ -221,8 +306,8 @@ export default function LoginForm() {
                   />
                 </svg>
               }
-              label={t("signInWithGoogle")}
-              onClick={handleGoogleLogin}
+              label={t("signUpWithGoogle")}
+              onClick={handleGoogleSignup}
               bgColor="bg-[#4285F4]"
             />
             <SocialLoginButton
@@ -235,19 +320,20 @@ export default function LoginForm() {
                   <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                 </svg>
               }
-              label={t("signInWithFacebook")}
-              onClick={handleFacebookLogin}
+              label={t("signUpWithFacebook")}
+              onClick={handleFacebookSignup}
               bgColor="bg-[#1877F2]"
             />
           </div>
+
           <div className="text-center pt-4 border-t border-gray-200">
             <p className="text-sm text-gray-600 font-arabic">
-              {t("noAccount")}{" "}
+              {t("hasAccount")}{" "}
               <Link
-                href="/signup"
-                className="text-main hover:text-main/80 font-semibold transition-colors duration-200 hover:underline"
+                href="/login"
+                className="text-primary hover:text-primary/80 font-semibold transition-colors duration-200 hover:underline"
               >
-                {t("createAccount")}
+                {t("signIn")}
               </Link>
             </p>
           </div>
