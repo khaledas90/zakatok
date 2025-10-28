@@ -30,6 +30,7 @@ import ImageJordon from "@/assets/jordan.svg";
 import ImageImarat from "@/assets/united-arab-emirates.svg";
 import FindCountry from "./_components/findCountry";
 import HowHelp from "./_components/howHelp";
+import { MapSection } from "../../(home)/_components/mapSection";
 
 interface Country {
   id: string;
@@ -223,7 +224,6 @@ export default function CountriesPage() {
         </div>
       </ScrollAnimation>
 
-      {/* Search and Filter */}
       <ScrollAnimation animation="fadeIn" delay={300}>
         <div className="container mx-auto px-4 py-8">
           <div className=" rounded-xl  border border-gray-100 p-2">
@@ -291,6 +291,7 @@ export default function CountriesPage() {
         )}
       </div>
       <HowHelp />
+      <MapSection />
       <FindCountry />
     </div>
   );

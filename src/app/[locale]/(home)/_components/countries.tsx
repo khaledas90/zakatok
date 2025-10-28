@@ -33,7 +33,7 @@ export default function Countries() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:max-w-7xl w-full mx-auto">
         <CountryCard name={t("countryNames.egypt")} flagElement={ImageEgypt} />
         <CountryCard
           name={t("countryNames.saudiArabia")}
