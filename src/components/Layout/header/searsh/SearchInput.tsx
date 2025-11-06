@@ -4,11 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SearchDropdown } from "./PaperSearch";
-import { useDispatch } from "react-redux";
 import clsx from "clsx";
-import { uiActions } from "@/store/uiSlice";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
+import { useUIStore } from "@/store/state/uiActions";
 
 export default function SearchInput() {
   const [open, setOpen] = useState(false);
@@ -19,8 +18,8 @@ export default function SearchInput() {
   const interactingWithDropdownRef = useRef(false);
   const router = useRouter();
   const pathname = usePathname();
-  const dispatch = useDispatch();
   const t = useTranslations("common.header");
+  const { searchOpen, setSearchOpen, setIsNavigating } = useUIStore();
 
   useEffect(() => {
     return () => {
@@ -29,8 +28,8 @@ export default function SearchInput() {
   }, []);
 
   useEffect(() => {
-    if (open || isFocused) {
-      setOpen(false);
+    if (searchOpen || isFocused) {
+      setSearchOpen(false);
       setIsFocused(false);
     }
   }, [pathname]);
@@ -40,23 +39,23 @@ export default function SearchInput() {
       e.preventDefault();
       if (inputValue.trim()) {
         router.push(`/products?search=${encodeURIComponent(inputValue)}`);
-        dispatch(uiActions.setIsNavigating(true));
+        setIsNavigating(true);
       }
       const input = e.currentTarget.querySelector("input") as HTMLInputElement;
       input?.blur();
     },
-    [inputValue, dispatch, router]
+    [inputValue, router, setIsNavigating]
   );
 
   const handleSearchClose = useCallback(() => {
-    setOpen(false);
+    setSearchOpen(false);
     setInputValue("");
     setIsFocused(false);
   }, []);
 
   const handleSearchClear = useCallback(() => {
     setInputValue("");
-    setOpen(false);
+    setSearchOpen(false);
     inputRef.current?.focus();
   }, []);
 

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Cairo, Tajawal } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import Providers from "./providers";
 import { Toaster } from "sonner";
@@ -9,7 +8,6 @@ import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/Layout/header/header";
 import Footer from "@/components/Layout/footer/footer";
-import StoreProvider from "@/store/StoreProvider";
 import ScrollButtons from "@/components/common/ScrollButtons";
 
 // English font
@@ -49,8 +47,6 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   const messages = await getMessages({ locale }).catch(() => ({}));
-
-  // Determine font classes based on locale
   const fontClasses =
     locale === "ar"
       ? `${cairo.variable} ${tajawal.variable}`
@@ -65,15 +61,13 @@ export default async function RootLayout({
         suppressHydrationWarning
       >
         <body className={`${fontClasses} antialiased`}>
-          <StoreProvider>
-            <Providers>
-              <Header />
-              <Toaster richColors position="top-right" />
-              <SidebarProvider>{children}</SidebarProvider>
-              <Footer />
-              <ScrollButtons />
-            </Providers>
-          </StoreProvider>
+          <Providers>
+            <Header />
+            <Toaster richColors position="top-right" />
+            <SidebarProvider>{children}</SidebarProvider>
+            <Footer />
+            <ScrollButtons />
+          </Providers>
         </body>
       </html>
     </NextIntlClientProvider>

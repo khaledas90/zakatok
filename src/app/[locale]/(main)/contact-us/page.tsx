@@ -20,6 +20,7 @@ import ScrollAnimation, {
   FadeIn,
   ScaleUp,
 } from "@/components/common/ScrollAnimation";
+import { useCommentsQuery } from "@/store/queries";
 
 export default function ContactUsPage() {
   const t = useTranslations("common.contactUs");

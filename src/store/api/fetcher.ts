@@ -2,15 +2,18 @@
 
 import { cookies } from "next/headers";
 
-const BASE_URL = "https://www.oxfmoney.com/api";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function fetcher<Response>(
   endpoint: string,
-  options: RequestInit = {}
+  options: RequestInit & {
+    next?: { revalidate?: number; tags?: string[] };
+  } = {}
 ): Promise<Response> {
   const reqCookies = await cookies();
   const token = reqCookies.get("token")?.value;
-  const defaultHeaders = {
+
+  const defaultHeaders: HeadersInit = {
     "Content-Type": "application/json",
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
   };
@@ -24,8 +27,8 @@ export async function fetcher<Response>(
         ...options.headers,
       },
       next: {
-        revalidate: options.next?.revalidate || 60 * 60,
-        tags: options.next?.tags ? ["ALL", ...options.next.tags] : ["ALL"],
+        revalidate: options.next?.revalidate ?? 60 * 60,
+        tags: options.next?.tags ?? ["ALL"],
       },
     }
   );
@@ -34,7 +37,5 @@ export async function fetcher<Response>(
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  const jsonData = await response.json();
-
-  return jsonData;
+  return response.json() as Promise<Response>;
 }

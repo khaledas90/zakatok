@@ -1,10 +1,3 @@
-import store from "@/store/store";
-import { userApi } from "./user";
-import { mainApi } from "./global";
-
-const invalidateAllQueries = () => {
-  store.dispatch(userApi.util.resetApiState());
-  store.dispatch(mainApi.util.resetApiState());
-};
-
-export { userApi, mainApi, invalidateAllQueries };
+export { queryClient } from "./queryClient";
+export { axiosBaseQuery, mainApi } from "./axiosConfig";
+export { fetcher } from "./fetcher";

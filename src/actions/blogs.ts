@@ -1,4 +1,4 @@
-import { fetcher } from "@/utils/fetcher";
+import { fetcher } from "@/store/api/fetcher";
 import { useQuery, useMutation } from "@tanstack/react-query";
 
 interface Post {

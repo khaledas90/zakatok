@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 import EnFlag from "@/assets/en-flag.svg";
 import ArFlag from "@/assets/ar-flag.svg";
 import Image from "next/image";
-import { invalidateAllQueries } from "@/store/api";
 
 const LanguageSwitcher = ({ isFooter }: { isFooter?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -122,7 +121,6 @@ const LanguageSwitcher = ({ isFooter }: { isFooter?: boolean }) => {
               const newPath = `/${lang.code}${pathWithoutLang || "/"}`;
 
               router.push(newPath);
-              invalidateAllQueries();
             }}
             style={{ animationDelay: `${index * 50}ms` }}
           >
