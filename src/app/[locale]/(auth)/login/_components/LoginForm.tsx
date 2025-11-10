@@ -41,8 +41,14 @@ export default function LoginForm() {
     setLoading(true);
     setError("");
     console.log("Login data:", data);
+    // Simulate API call
     setTimeout(() => {
+      // Set token to indicate user is logged in
+      document.cookie = `token=${Date.now()}; path=/; max-age=86400`; // 24 hours
+      localStorage.setItem("token", Date.now().toString());
       setLoading(false);
+      router.push("/profile");
+      router.refresh(); // Refresh to update header
     }, 2000);
   };
 

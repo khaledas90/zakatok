@@ -6,6 +6,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import SearchInput from "./searsh/SearchInput";
 import logo from "@/assets/logo.svg";
 import { Button } from "@/components/ui/button";
+import { UserMenuClient } from "./UserMenuClient";
 
 export default async function Header() {
   const t = await getTranslations("common.header");
@@ -58,6 +59,7 @@ export default async function Header() {
 
           <div className="hidden lg:flex items-center space-x-4">
             <LanguageSwitcher />
+            <UserMenuClient />
             <Link href={`/add-organization`}>
               <Button variant="default" className="text-white !bg-[#2c7242]">
                 {t("Add Organization")}
@@ -67,6 +69,7 @@ export default async function Header() {
 
           <div className="flex lg:hidden items-center space-x-2">
             <LanguageSwitcher />
+            <UserMenuClient />
             <MobileNavigationClient />
           </div>
         </div>
