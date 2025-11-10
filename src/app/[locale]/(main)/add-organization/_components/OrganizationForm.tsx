@@ -22,7 +22,7 @@ import {
   getDonationTypes,
   getFormSteps,
 } from "@/lib/constants/organization-form";
-import { useAddOrgnizationMutation } from "@/store/api/global/orgnization";
+import { useAddOrgnizationMutation } from "@/store/api/global/organization";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -137,8 +137,12 @@ export function OrganizationForm({
   setCompletedSteps,
 }: OrganizationFormProps) {
   const t = useTranslations("common.organizationForm");
-  const [addOrganization, { isLoading, isError, error }] =
-    useAddOrgnizationMutation();
+  const {
+    mutateAsync: addOrganization,
+    isPending: isLoading,
+    isError,
+    error,
+  } = useAddOrgnizationMutation();
 
   const COUNTRIES = getCountries();
   const DONATION_TYPES = getDonationTypes();

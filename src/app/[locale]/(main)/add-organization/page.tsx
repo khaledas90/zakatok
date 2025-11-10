@@ -4,14 +4,18 @@ import { StepIndicator } from "./_components/StepIndicator";
 import { OrganizationForm } from "./_components/OrganizationForm";
 import { Building2, Users, Shield } from "lucide-react";
 import { OrganizationFormData } from "@/lib/validations/organization-form";
-import { useAddOrgnizationMutation } from "@/store/api/global/orgnization";
+import { useAddOrgnizationMutation } from "@/store/api/global/organization";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 export default function AddOrganizationForm() {
   const t = useTranslations("common.organizationForm");
-  const [addOrganization, { isLoading, isError, error }] =
-    useAddOrgnizationMutation();
+  const {
+    mutateAsync: addOrganization,
+    isPending: isLoading,
+    isError,
+    error,
+  } = useAddOrgnizationMutation();
   const [currentStep, setCurrentStep] = useState(1);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
 
@@ -41,7 +45,7 @@ export default function AddOrganizationForm() {
         urlpaymentPage: "",
       };
 
-      await addOrganization(organizationData).unwrap();
+      await addOrganization(organizationData);
       alert(t("formSubmittedSuccessfully"));
     } catch (err) {
       console.error("Error submitting form:", err);

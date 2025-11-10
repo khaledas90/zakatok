@@ -45,11 +45,10 @@ export function DonationModal() {
         </DialogHeader>
 
         <div className="p-3 sm:p-4 md:p-6 overflow-y-auto max-h-[70vh] sm:max-h-[75vh] md:max-h-[80vh] animate-fade-in-delay">
-          <Tabs>
+          <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="grid w-full grid-cols-3 mb-4 sm:mb-6 animate-slide-up delay-200">
               <TabsTrigger
-                active={activeTab === "bank"}
-                onClick={() => setActiveTab("bank")}
+                value="bank"
                 className="cursor-pointer text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 transition-all duration-300 hover:scale-105"
               >
                 <Building2 className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
@@ -57,8 +56,7 @@ export function DonationModal() {
                 <span className="xs:hidden">بنكي</span>
               </TabsTrigger>
               <TabsTrigger
-                active={activeTab === "cash"}
-                onClick={() => setActiveTab("cash")}
+                value="cash"
                 className="cursor-pointer text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 transition-all duration-300 hover:scale-105"
               >
                 <Wallet className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
@@ -66,8 +64,7 @@ export function DonationModal() {
                 <span className="xs:hidden">كاش</span>
               </TabsTrigger>
               <TabsTrigger
-                active={activeTab === "card"}
-                onClick={() => setActiveTab("card")}
+                value="card"
                 className="cursor-pointer text-xs sm:text-sm px-2 sm:px-4 py-2 sm:py-3 transition-all duration-300 hover:scale-105"
               >
                 <CreditCard className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
@@ -76,10 +73,7 @@ export function DonationModal() {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent
-              hidden={activeTab !== "bank"}
-              className="animate-slide-up delay-300"
-            >
+            <TabsContent value="bank" className="animate-slide-up delay-300">
               <div className="bg-gradient-to-br from-[#2c7242]/5 to-[#c48845]/5 rounded-xl p-3 sm:p-4 md:p-6 border border-[#2c7242]/20 hover:shadow-lg transition-all duration-300">
                 <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 md:gap-6">
                   <div className="flex-shrink-0 mx-auto sm:mx-0">
@@ -129,10 +123,7 @@ export function DonationModal() {
               </div>
             </TabsContent>
 
-            <TabsContent
-              hidden={activeTab !== "cash"}
-              className="animate-slide-up delay-300"
-            >
+            <TabsContent value="cash" className="animate-slide-up delay-300">
               <div className="space-y-3 sm:space-y-4">
                 <div className="bg-gradient-to-br from-[#2c7242]/5 to-[#c48845]/5 rounded-xl p-3 sm:p-4 md:p-6 border border-[#2c7242]/20 hover:shadow-lg transition-all duration-300 animate-slide-up delay-400">
                   <div className="flex items-start justify-between mb-3 sm:mb-4">
@@ -193,10 +184,7 @@ export function DonationModal() {
               </div>
             </TabsContent>
 
-            <TabsContent
-              hidden={activeTab !== "card"}
-              className="animate-slide-up delay-300"
-            >
+            <TabsContent value="card" className="animate-slide-up delay-300">
               <div className="bg-gradient-to-br from-[#2c7242]/5 to-[#c48845]/5 rounded-xl p-4 sm:p-6 md:p-8 border border-[#2c7242]/20 hover:shadow-lg transition-all duration-300">
                 <div className="text-center space-y-4 sm:space-y-6">
                   <div className="flex items-center justify-center gap-3 sm:gap-4 animate-slide-up delay-400">
