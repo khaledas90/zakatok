@@ -9,6 +9,7 @@ import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/Layout/header/header";
 import Footer from "@/components/Layout/footer/footer";
 import ScrollButtons from "@/components/common/ScrollButtons";
+import { ConditionalLayout } from "../../components/ConditionalLayout";
 
 // English font
 const inter = Inter({
@@ -62,11 +63,14 @@ export default async function RootLayout({
       >
         <body className={`${fontClasses} antialiased`}>
           <Providers>
-            <Header />
             <Toaster richColors position="top-right" />
-            <SidebarProvider>{children}</SidebarProvider>
-            <Footer />
-            <ScrollButtons />
+            <ConditionalLayout
+              header={<Header />}
+              footer={<Footer />}
+              scrollButtons={<ScrollButtons />}
+            >
+              <SidebarProvider>{children}</SidebarProvider>
+            </ConditionalLayout>
           </Providers>
         </body>
       </html>
