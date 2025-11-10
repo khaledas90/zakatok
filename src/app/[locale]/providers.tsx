@@ -19,4 +19,4 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       </ThemeProvider>
     </QueryClientProvider>
   );
-} 
+}
