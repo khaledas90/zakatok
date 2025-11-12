@@ -3,6 +3,7 @@ import React from "react";
 import ImageGaza from "@/assets/gaza-emergency.jpg";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 export default function GazaEmergency() {
   const t = useTranslations("common.gazaEmergency");
@@ -23,9 +24,11 @@ export default function GazaEmergency() {
             {t("description")}
           </p>
 
-          <Button className="bg-main mt-6 hover:bg-main/90 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 font-arabic">
-            {t("donateNow")}
-          </Button>
+          <Link href="/campaigns">
+            <Button className="bg-main mt-6 hover:bg-main/90 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 font-arabic">
+              {t("donateNow")}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

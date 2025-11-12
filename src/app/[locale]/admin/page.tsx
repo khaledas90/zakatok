@@ -49,7 +49,7 @@ export default function AdminDashboard() {
   const statCards = [
     {
       title: "Total Users",
-      value: stats.totalUsers.toLocaleString(),
+      value: stats.totalUsers.toLocaleString("en-US"),
       change: "+12.5%",
       icon: Users,
       color: "text-blue-500",
@@ -57,7 +57,7 @@ export default function AdminDashboard() {
     },
     {
       title: "Active Users",
-      value: stats.activeUsers.toLocaleString(),
+      value: stats.activeUsers.toLocaleString("en-US"),
       change: "+8.2%",
       icon: TrendingUp,
       color: "text-green-500",
@@ -65,7 +65,7 @@ export default function AdminDashboard() {
     },
     {
       title: "Total Comments",
-      value: stats.totalComments.toLocaleString(),
+      value: stats.totalComments.toLocaleString("en-US"),
       change: "+15.3%",
       icon: MessageSquare,
       color: "text-purple-500",
@@ -73,7 +73,7 @@ export default function AdminDashboard() {
     },
     {
       title: "Active Campaigns",
-      value: stats.activeCampaigns.toLocaleString(),
+      value: stats.activeCampaigns.toLocaleString("en-US"),
       change: "+5.1%",
       icon: Megaphone,
       color: "text-orange-500",
@@ -89,7 +89,7 @@ export default function AdminDashboard() {
     },
     {
       title: "Countries",
-      value: stats.totalCountries.toLocaleString(),
+      value: stats.totalCountries.toLocaleString("en-US"),
       change: "Top: " + stats.topCountry,
       icon: Globe,
       color: "text-cyan-500",
@@ -249,7 +249,7 @@ export default function AdminDashboard() {
                       border: "1px solid hsl(var(--border))",
                       borderRadius: "6px",
                     }}
-                    formatter={(value: number) => `$${value.toLocaleString()}`}
+                    formatter={(value: number) => `$${value.toLocaleString("en-US")}`}
                   />
                   <Bar
                     dataKey="donations"
@@ -295,7 +295,7 @@ export default function AdminDashboard() {
                       border: "1px solid hsl(var(--border))",
                       borderRadius: "6px",
                     }}
-                    formatter={(value: number) => `$${value.toLocaleString()}`}
+                    formatter={(value: number) => `$${value.toLocaleString("en-US")}`}
                   />
                   <Bar
                     dataKey="donations"

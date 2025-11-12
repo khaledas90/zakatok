@@ -1,12 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AdminSidebar } from "./AdminSidebar";
 import { AdminNavbar } from "./AdminNavbar";
 
 export function AdminLayoutClient({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setSidebarOpen] = React.useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -16,13 +21,17 @@ export function AdminLayoutClient({ children }: { children: React.ReactNode }) {
         <AdminNavbar onMenuClick={() => setSidebarOpen(true)} />
 
         <main className="p-4 sm:p-6 lg:p-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {children}
-          </motion.div>
+          {mounted ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {children}
+            </motion.div>
+          ) : (
+            <div>{children}</div>
+          )}
         </main>
       </div>
     </div>

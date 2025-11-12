@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import ImageOne from "@/assets/heart.jpg";
 import ImageTwo from "@/assets/dirt-plants.jpg";
 import ImageThree from "@/assets/kids-organising.jpg";
@@ -93,12 +94,14 @@ export function Hero() {
             <p className="text-base md:text-lg opacity-90 mb-6 animate-fade-in-delay">
               {slide.subtitle}
             </p>
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all animate-fade-in-delay-2"
-            >
-              {slide.cta}
-            </Button>
+            <Link href="/campaigns">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all animate-fade-in-delay-2"
+              >
+                {slide.cta}
+              </Button>
+            </Link>
           </div>
         </div>
       ))}

@@ -18,17 +18,17 @@ import { User, Settings, FileText, LogOut } from "lucide-react";
 export function UserMenuClient() {
   const router = useRouter();
   const pathname = usePathname();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useEffect(() => { 
+  useEffect(() => {
     const checkAuth = () => {
       if (typeof window === "undefined") return;
-       
+
       const token = document.cookie
         .split("; ")
         .find((row) => row.startsWith("token="));
@@ -40,14 +40,14 @@ export function UserMenuClient() {
 
     if (mounted) {
       checkAuth();
-      
+
       // Listen for storage changes
       const handleStorageChange = () => checkAuth();
       window.addEventListener("storage", handleStorageChange);
-      
+
       // Check periodically (but less frequently)
       const interval = setInterval(checkAuth, 2000);
-      
+
       return () => {
         clearInterval(interval);
         window.removeEventListener("storage", handleStorageChange);
@@ -58,7 +58,8 @@ export function UserMenuClient() {
   const handleLogout = () => {
     // Clear auth tokens
     if (typeof window !== "undefined") {
-      document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie =
+        "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       localStorage.removeItem("token");
     }
     setIsLoggedIn(false);
@@ -85,7 +86,9 @@ export function UserMenuClient() {
         >
           <Avatar className="h-10 w-10 border-2 border-[#2c7242]">
             <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" />
-            <AvatarFallback className="bg-[#2c7242] text-white">U</AvatarFallback>
+            <AvatarFallback className="bg-[#2c7242] text-white">
+              U
+            </AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
@@ -128,4 +131,3 @@ export function UserMenuClient() {
     </DropdownMenu>
   );
 }
-

@@ -2,6 +2,7 @@ import { CountryCard } from "@/components/common/countryCard";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import ImageEgypt from "@/assets/egypt.svg";
 import ImageQater from "@/assets/qatar.svg";
 import ImageSoudia from "@/assets/saudi-arabia.svg";
@@ -49,9 +50,11 @@ export default function Countries() {
 
       <div className="mt-12 text-center">
         <p className="text-[#6b7280] mb-4 font-arabic">{t("notSeeCountry")}</p>
-        <Button className="bg-main hover:bg-main/90 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 font-arabic">
-          {t("suggestNewCountry")}
-        </Button>
+        <Link href="/add-organization">
+          <Button className="bg-main hover:bg-main/90 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 font-arabic">
+            {t("suggestNewCountry")}
+          </Button>
+        </Link>
       </div>
     </section>
   );

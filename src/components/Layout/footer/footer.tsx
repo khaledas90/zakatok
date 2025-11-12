@@ -26,6 +26,10 @@ export default function Footer() {
       href: `/${locale}/campaigns`,
     },
     {
+      label: t("sections.services.links.organizations"),
+      href: `/${locale}/organizations`,
+    },
+    {
       label: t("sections.support.links.contactUs"),
       href: `/${locale}/contact-us`,
     },

@@ -7,10 +7,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DialogTitle } from "@/components/ui/dialog";
 import { Search, Phone, ChevronDown, Menu } from "lucide-react";
 import Link from "next/link";
+import { Link as I18nLink } from "@/i18n/routing";
 import Image from "next/image";
 import logo from "@/assets/logo.svg";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { Badge } from "@/components/ui/badge";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import SearchInput from "./searsh/SearchInput";
@@ -153,6 +153,13 @@ export default function MobileNavigationClient() {
                   {t("Campaigns")}
                 </Link>
                 <Link
+                  href={`/${locale}/organizations`}
+                  className="block px-3 py-2 text-gray-700 hover:text-main hover:bg-gray-50 rounded-md transition-colors duration-200"
+                  onClick={handleSheetClose}
+                >
+                  {t("Organizations")}
+                </Link>
+                <Link
                   href={`/${locale}/contact-us`}
                   className="block px-3 py-2 text-gray-700 hover:text-main hover:bg-gray-50 rounded-md transition-colors duration-200"
                   onClick={handleSheetClose}
@@ -163,12 +170,14 @@ export default function MobileNavigationClient() {
             </div>
 
             <div className="border-t pt-4 space-y-3">
-              <Button
-                variant="default"
-                className="text-white w-full !bg-[#2c7242]"
-              >
-                أضف منطقة
-              </Button>
+              <I18nLink href="/add-organization" className="block">
+                <Button
+                  variant="default"
+                  className="text-white w-full !bg-[#2c7242]"
+                >
+                  {t("Add Organization")}
+                </Button>
+              </I18nLink>
             </div>
           </div>
         </SheetContent>

@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
+import { Link } from "@/i18n/routing";
 
 interface CountryDetailCardProps {
   country: {
@@ -120,9 +121,11 @@ export function CountryDetailCard({
           </ul>
         </div>
 
-        <Button className="w-full bg-[#2c7242] hover:bg-[#2c7242]/90 text-white group-hover:shadow-lg transition-all duration-300">
-          {t("donateNow")}
-        </Button>
+        <Link href="/countries">
+          <Button className="w-full bg-[#2c7242] hover:bg-[#2c7242]/90 text-white group-hover:shadow-lg transition-all duration-300">
+            {t("donateNow")}
+          </Button>
+        </Link>
       </div>
     </div>
   );

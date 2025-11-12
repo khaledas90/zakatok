@@ -45,7 +45,12 @@ export default async function Header() {
             >
               {t("Campaigns")}
             </Link>
-
+            <Link
+              href={`/organizations`}
+              className="text-gray-700 hover:text-[#3ABFF8] transition-colors duration-200 font-medium"
+            >
+              {t("Organizations")}
+            </Link>
             <Link
               href={`/contact-us`}
               className="text-gray-700 hover:text-[#3ABFF8] transition-colors duration-200 font-medium"
@@ -60,6 +65,14 @@ export default async function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <LanguageSwitcher />
             <UserMenuClient />
+            <Link href="/login">
+              <Button
+                variant="outline"
+                className="border-[#2c7242] text-[#2c7242] hover:bg-[#2c7242] hover:text-[#fff] "
+              >
+                {t("Login")}
+              </Button>
+            </Link>
             <Link href={`/add-organization`}>
               <Button variant="default" className="text-white !bg-[#2c7242]">
                 {t("Add Organization")}
@@ -70,6 +83,14 @@ export default async function Header() {
           <div className="flex lg:hidden items-center space-x-2">
             <LanguageSwitcher />
             <UserMenuClient />
+            <Link href="/login">
+              <Button
+                variant="outline"
+                className="border-[#2c7242] text-[#2c7242] hover:bg-[#2c7242] hover:text-[#fff] "
+              >
+                {t("Login")}
+              </Button>
+            </Link>
             <MobileNavigationClient />
           </div>
         </div>

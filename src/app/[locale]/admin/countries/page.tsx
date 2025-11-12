@@ -110,7 +110,7 @@ export default function CountriesPage() {
       header: "Active Users",
       cell: (country) => (
         <span className="font-medium">
-          {country.activeUsers.toLocaleString()}
+          {country.activeUsers.toLocaleString("en-US")}
         </span>
       ),
       sortable: true,
@@ -168,7 +168,7 @@ export default function CountriesPage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {totalStats.totalUsers.toLocaleString()}
+              {totalStats.totalUsers.toLocaleString("en-US")}
             </div>
           </CardContent>
         </Card>
