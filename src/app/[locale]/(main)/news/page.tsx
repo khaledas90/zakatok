@@ -30,7 +30,10 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { DataTable, type Column } from "@/components/admin/DataTable";
+import {
+  DataTable,@/app/[locale]/admin/_components/table/Pagination
+  type Column,
+} from "@/app/[locale]/admin/_components/table/DataTable";
 import { Pagination } from "@/components/admin/Pagination";
 import { mockNews, type News } from "@/lib/mock-news";
 import { Plus, Edit, Trash2, Eye, Filter } from "lucide-react";

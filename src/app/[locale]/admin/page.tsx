@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -40,11 +41,32 @@ import {
 } from "lucide-react";
 
 export default function AdminDashboard() {
-  const stats = getDashboardStats();
-  const userGrowthData = getUserGrowthData();
-  const campaignStatusData = getCampaignStatusData();
-  const donationTrendData = getDonationTrendData();
-  const countryDonationsData = getCountryDonationsData();
+  const [mounted, setMounted] = useState(false);
+  const [stats, setStats] = useState({
+    totalUsers: 0,
+    activeUsers: 0,
+    totalComments: 0,
+    approvedComments: 0,
+    pendingComments: 0,
+    totalCampaigns: 0,
+    activeCampaigns: 0,
+    totalDonations: 0,
+    topCountry: "",
+    totalCountries: 0,
+  });
+  const [userGrowthData, setUserGrowthData] = useState<Array<{ month: string; users: number }>>([]);
+  const [campaignStatusData, setCampaignStatusData] = useState<Array<{ name: string; value: number; color: string }>>([]);
+  const [donationTrendData, setDonationTrendData] = useState<Array<{ month: string; donations: number }>>([]);
+  const [countryDonationsData, setCountryDonationsData] = useState<Array<{ name: string; donations: number }>>([]);
+
+  useEffect(() => {
+    setMounted(true);
+    setStats(getDashboardStats());
+    setUserGrowthData(getUserGrowthData());
+    setCampaignStatusData(getCampaignStatusData());
+    setDonationTrendData(getDonationTrendData());
+    setCountryDonationsData(getCountryDonationsData());
+  }, []);
 
   const statCards = [
     {
@@ -96,6 +118,35 @@ export default function AdminDashboard() {
       bgColor: "bg-cyan-500/10",
     },
   ];
+
+  if (!mounted) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+          <p className="text-muted-foreground">
+            Welcome back! Here's an overview of your platform.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {[...Array(6)].map((_, i) => (
+            <Card key={i}>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">
+                  <div className="h-4 w-24 bg-muted animate-pulse rounded" />
+                </CardTitle>
+                <div className="h-8 w-8 bg-muted animate-pulse rounded-lg" />
+              </CardHeader>
+              <CardContent>
+                <div className="h-8 w-32 bg-muted animate-pulse rounded mb-2" />
+                <div className="h-4 w-40 bg-muted animate-pulse rounded" />
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

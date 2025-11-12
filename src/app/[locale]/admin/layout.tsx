@@ -1,5 +1,5 @@
 import React from "react";
-import { AdminLayoutClient } from "./_components/AdminLayoutClient";
+import { AdminLayoutClient } from "@/app/[locale]/admin/_components/layout/AdminLayoutClient";
 
 export default function AdminLayout({
   children,

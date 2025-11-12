@@ -1,16 +1,11 @@
 export interface ListMeta {
-  pageNumber: number;
-  pageSize: number;
-  totalCount: number;
+  totalElements: number;
   totalPages: number;
-  lastPage?: number;
-  totalItems: number;
-  page: number;
+  size: number;
+  number: number;
 }
 
 export interface QueryResponse<DataType> {
-  IsSuccess: boolean;
-  message: string;
-  data: DataType;
-  meta: ListMeta;
+  page: ListMeta;
+  content: DataType;
 }
