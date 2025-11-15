@@ -31,10 +31,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  DataTable,@/app/[locale]/admin/_components/table/Pagination
-  type Column,
-} from "@/app/[locale]/admin/_components/table/DataTable";
-import { Pagination } from "@/components/admin/Pagination";
+  GlobalTable,
+  type TableRowData,
+} from "@/app/[locale]/admin/_components/table/GlobalTable";
 import { mockNews, type News } from "@/lib/mock-news";
 import { Plus, Edit, Trash2, Eye, Filter } from "lucide-react";
 import { format } from "date-fns";
@@ -44,16 +43,36 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useForm, type UseFormReturn } from "react-hook-form";
+import type { BasePageInputs } from "@/types/common";
+import type { ListMeta } from "@/types/api";
+
+interface NewsPageInputs extends BasePageInputs {
+  search?: string;
+  status?: string | null;
+}
 
 export default function NewsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
-  const [currentPage, setCurrentPage] = useState(1);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [selectedNews, setSelectedNews] = useState<News | null>(null);
   const [newsList, setNewsList] = useState(mockNews);
-  const pageSize = 10;
+
+  const basePageInputs = useForm<NewsPageInputs>({
+    defaultValues: {
+      page: 1,
+      size: 10,
+      search: "",
+      status: null,
+      sort: "createdAt,desc",
+    },
+  });
+
+  const { watch, setValue } = basePageInputs;
+  const currentPage = watch("page") || 1;
+  const pageSize = watch("size") || 10;
 
   const filteredNews = useMemo(() => {
     return newsList.filter((news) => {
@@ -73,6 +92,16 @@ export default function NewsPage() {
   }, [filteredNews, currentPage, pageSize]);
 
   const totalPages = Math.ceil(filteredNews.length / pageSize);
+
+  const meta: ListMeta = useMemo(
+    () => ({
+      totalElements: filteredNews.length,
+      totalPages: totalPages,
+      size: pageSize,
+      number: currentPage,
+    }),
+    [filteredNews.length, totalPages, pageSize, currentPage]
+  );
 
   const stats = {
     total: newsList.length,
@@ -149,97 +178,73 @@ export default function NewsPage() {
     }
   };
 
-  const columns: Column<News>[] = [
-    {
-      key: "title",
-      header: "Title",
-      cell: (news) => (
-        <div>
-          <div className="font-medium">{news.title}</div>
-          <div className="text-sm text-muted-foreground line-clamp-1">
-            {news.content}
+  const headerCells: Omit<TableRowData, "id"> = {
+    title: "Title",
+    author: "Author",
+    category: "Category",
+    status: "Status",
+    views: "Views",
+    likes: "Likes",
+    createdAt: "Created",
+    actions: "",
+  };
+
+  const rows: TableRowData[] = useMemo(
+    () =>
+      paginatedNews.map((news) => ({
+        id: news.id,
+        title: (
+          <div>
+            <div className="font-medium">{news.title}</div>
+            <div className="text-sm text-muted-foreground line-clamp-1">
+              {news.content}
+            </div>
           </div>
-        </div>
-      ),
-      sortable: true,
-    },
-    {
-      key: "author",
-      header: "Author",
-      cell: (news) => (
-        <div>
-          <div className="font-medium">{news.author}</div>
-          <div className="text-xs text-muted-foreground">
-            {news.authorEmail}
+        ),
+        author: (
+          <div>
+            <div className="font-medium">{news.author}</div>
+            <div className="text-xs text-muted-foreground">
+              {news.authorEmail}
+            </div>
           </div>
-        </div>
-      ),
-      sortable: true,
-    },
-    {
-      key: "category",
-      header: "Category",
-      cell: (news) => <Badge variant="outline">{news.category}</Badge>,
-      sortable: true,
-    },
-    {
-      key: "status",
-      header: "Status",
-      cell: (news) => getStatusBadge(news.status),
-      sortable: true,
-    },
-    {
-      key: "views",
-      header: "Views",
-      cell: (news) => <span className="font-medium">{news.views}</span>,
-      sortable: true,
-    },
-    {
-      key: "likes",
-      header: "Likes",
-      cell: (news) => <span className="font-medium">{news.likes}</span>,
-      sortable: true,
-    },
-    {
-      key: "createdAt",
-      header: "Created",
-      cell: (news) => (
-        <span className="text-muted-foreground">
-          {format(new Date(news.createdAt), "MMM dd, yyyy")}
-        </span>
-      ),
-      sortable: true,
-    },
-    {
-      key: "actions",
-      header: "",
-      cell: (news) => (
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" title="View">
-            <Eye className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => handleEdit(news)}
-            title="Edit"
-          >
-            <Edit className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => handleDelete(news)}
-            title="Delete"
-            className="text-red-500 hover:text-red-600"
-          >
-            <Trash2 className="h-4 w-4" />
-          </Button>
-        </div>
-      ),
-      className: "w-[150px]",
-    },
-  ];
+        ),
+        category: <Badge variant="outline">{news.category}</Badge>,
+        status: getStatusBadge(news.status),
+        views: <span className="font-medium">{news.views}</span>,
+        likes: <span className="font-medium">{news.likes}</span>,
+        createdAt: (
+          <span className="text-muted-foreground">
+            {format(new Date(news.createdAt), "MMM dd, yyyy")}
+          </span>
+        ),
+        actions: (
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" title="View">
+              <Eye className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => handleEdit(news)}
+              title="Edit"
+            >
+              <Edit className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => handleDelete(news)}
+              title="Delete"
+              className="text-red-500 hover:text-red-600"
+            >
+              <Trash2 className="h-4 w-4" />
+            </Button>
+          </div>
+        ),
+      })),
+    [paginatedNews]
+  );
 
   return (
     <div className="container mx-auto py-8 px-4 max-w-7xl min-h-screen">
@@ -305,7 +310,7 @@ export default function NewsPage() {
                   value={searchQuery}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
-                    setCurrentPage(1);
+                    setValue("page", 1);
                   }}
                   className="flex h-9 w-full max-w-sm rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 />
@@ -337,23 +342,25 @@ export default function NewsPage() {
             </div>
           </CardHeader>
           <CardContent>
-            <DataTable
-              data={paginatedNews}
-              columns={columns}
-              pageSize={pageSize}
+            <GlobalTable
+              headerCells={headerCells}
+              rows={rows}
+              meta={meta}
+              basePageInputs={
+                basePageInputs as unknown as UseFormReturn<
+                  NewsPageInputs,
+                  unknown,
+                  undefined
+                >
+              }
+              page={currentPage}
+              setPage={(page) => setValue("page", page)}
+              setSize={(size) => {
+                setValue("size", size);
+                setValue("page", 1);
+              }}
               emptyMessage="No news articles found"
             />
-            {totalPages > 1 && (
-              <div className="mt-4">
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={setCurrentPage}
-                  pageSize={pageSize}
-                  totalItems={filteredNews.length}
-                />
-              </div>
-            )}
           </CardContent>
         </Card>
       </div>
